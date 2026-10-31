@@ -1,6 +1,12 @@
 # New environment: Supabase + Render
 
-**Status (2026-10-31):** Supabase project and Render service created by Chad. Schema baseline decided: production snapshot. Node build for Render ready and tested. Next: apply the baseline to the hosted project (see "Handoff"). Scope and rules are in `CLAUDE.md` ("New environment rules").
+**Status (2026-10-31, later):** Seed script and math check are ready and pass on a local PG17 copy of the snapshot. Nothing has been run against the hosted project yet: the first read-only `check` is waiting on Chad to confirm the project ref (see "Blocked: confirm the project ref"). Scope and rules are in `CLAUDE.md` ("New environment rules").
+
+## Blocked: confirm the project ref
+
+- `SUPABASE_PROJECT_REF` in the environment is the project **URL** (`https://mmutdqklchnftziikqpq.supabase.co`), not the bare ref. The scripts now accept either form (`harness/db/mgmt-api.sh`) and refuse anything that isn't a 20-letter ref.
+- Nothing in the repo records Lovable's production ref, so the session cannot prove `mmutdqklchnftziikqpq` is the new project and not production. The session's permission check stopped the first `check` call for that reason, and no request was sent.
+- To unblock: Chad confirms `mmutdqklchnftziikqpq` is the new project (Supabase dashboard → the new project → Settings → General → Reference ID) and allows the call. Setting the variable to the bare ref is tidier but not required. Scope and rules are in `CLAUDE.md` ("New environment rules").
 
 ## Local migration test
 
@@ -66,6 +72,8 @@ Direct Postgres connections (ports 5432 and 6543) are blocked from Claude's clou
 | `apply` | Applies `docs/handoff/schema.sql` in one transaction. Refuses if `public` already has tables. |
 | `verify` | Compares the project's catalog with `harness/db/expected-catalog.json` |
 
+All three commands also run against a local Postgres with `TTP_LOCAL_PG_PORT=<port>` (except `check`, which needs the API). Locally on `supabase/postgres:17.4.1.020`, `apply` of the snapshot followed by `verify` gives "catalog matches the production snapshot".
+
 `expected-catalog.json` is the fingerprint (`harness/db/catalog-fingerprint.sql`) of the snapshot applied to local Supabase Postgres 17: 17 tables, 161 columns, 5 enums, 14 functions, 38 policies, 45 indexes, 13 triggers, 357 grants. A hosted project may differ from local in default grants. Investigate any diff; don't edit the expected file to match.
 
 Session setup (done by Chad in the CH-HUB environment):
@@ -73,6 +81,21 @@ Session setup (done by Chad in the CH-HUB environment):
 - **Environment variable:** `SUPABASE_PROJECT_REF=<project ref>`
 
 After the baseline is in: revoke the access token (supabase.com → Account → Access Tokens).
+
+## Seeding the fixtures
+
+`harness/db/remote-seed.sh` (SQL from `harness/db/seed-fixtures.ts`), same Management API path:
+
+| Command | What it does |
+| --- | --- |
+| `seed <owner-email>` | One transaction: one test location "TEST: scrubbed fixtures (not real payroll)", its settings from `fixtures/inputs.json`, staff S01–S24 (named "Staff S01" …), the 210 shifts with all entries, members and overrides. Refuses if any location already exists or if the owner email isn't a user yet. |
+| `check` | Reads the rows back in the shape of the payroll screen's select (`reports.tsx`), runs the engine exactly as that screen does, and compares with `fixtures/expected_v1.json`: every shift deep-equal, and period totals per staff to the cent. |
+| `reset` | Deletes the test location and everything under it. |
+
+- **Owner:** the seed attaches the location to an existing login, so create one first: Supabase dashboard → Authentication → Users → Add user (email + password, auto-confirm). Use a test address, not a staff member's.
+- **Row ids** are derived from fixture keys, so the seed is reproducible and `check` maps database ids back to S01–S24.
+- **Audit rows:** the audit triggers log the seed itself (the settings update and every inserted override) with no user attached. The seed deletes those rows in the same transaction, so the audit panel shows only real edits.
+- **Tested locally** (PG17 + snapshot): `seed` then `check` gives 210 of 210 shifts and 240 of 240 period-total values matching, credit tips $66,220.83. Negative control: changing one server's credit tips by $0.01 makes `check` fail on that shift and on S09's period credit tips. `reset` leaves 0 rows. `npm test`: 212 of 212.
 
 ## Render
 
@@ -95,8 +118,9 @@ Deploy only after the baseline is applied. Until Google sign-in is rewired, use 
 
 ## Handoff: next steps, in order
 
+0. Chad confirms the project ref (see "Blocked" above).
 1. `harness/db/remote-baseline.sh check`: confirm the ref, PG17, and 0 tables in `public`. Stop and report if any of that is wrong.
 2. `harness/db/remote-baseline.sh apply`, then `verify`. Report any catalog diff before going further.
-3. Write a seed script that loads ONLY the scrubbed fixtures (`fixtures/inputs.json`) into the new project through the same API: one test location, its settings, S01–S24 staff, the 210 shifts. No production rows. Then check that the payroll report's math on that data equals `fixtures/expected_v1.json`.
+3. Chad adds a test login (Authentication → Users → Add user). Then `harness/db/remote-seed.sh seed <that email>` and `harness/db/remote-seed.sh check`. *(Script written and tested locally.)*
 4. Tell Chad to deploy on Render, then smoke-test sign-in and the payroll screen.
 5. Then replace the Lovable-only pieces, one PR each: Google sign-in (Supabase OAuth), Twilio direct, error reporting.

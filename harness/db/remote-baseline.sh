@@ -8,28 +8,21 @@
 #   harness/db/remote-baseline.sh apply    applies the snapshot in one transaction; refuses unless public is empty
 #   harness/db/remote-baseline.sh verify   compares the project's catalog with harness/db/expected-catalog.json
 #
-# Needs SUPABASE_PROJECT_REF (environment variable). Never point this at Lovable's production project.
+# Needs SUPABASE_PROJECT_REF (bare ref or https://<ref>.supabase.co). Never point this at Lovable's production project.
+# Local test: TTP_LOCAL_PG_PORT=54323 runs apply/verify against local Postgres (check needs the API).
 set -euo pipefail
-: "${SUPABASE_PROJECT_REF:?set SUPABASE_PROJECT_REF in the environment settings}"
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
-API="https://api.supabase.com/v1/projects/$SUPABASE_PROJECT_REF"
-
-query() { # $1 = SQL text; prints the JSON rows
-  local body out code
-  body="$(jq -Rs '{query: .}' <<<"$1")"
-  out="$(mktemp)"
-  code="$(curl -sS -o "$out" -w '%{http_code}' -X POST "$API/database/query" -H 'Content-Type: application/json' --data-binary "$body")"
-  if [[ "$code" != 2* ]]; then echo "query failed: HTTP $code: $(head -c 500 "$out")" >&2; rm -f "$out"; exit 1; fi
-  cat "$out"; rm -f "$out"
-}
-public_tables() { query "select count(*)::int as n from information_schema.tables where table_schema='public'" | jq -r '.[0].n'; }
+# shellcheck source=harness/db/mgmt-api.sh
+source "$ROOT/harness/db/mgmt-api.sh"
+echo "target: $TTP_TARGET" >&2
 
 case "${1:-}" in
   check)
+    [[ -z "${TTP_LOCAL_PG_PORT:-}" ]] || { echo "check needs the Management API; unset TTP_LOCAL_PG_PORT" >&2; exit 2; }
     code="$(curl -sS -o /tmp/ttp-project.json -w '%{http_code}' "$API")"
     [[ "$code" == 200 ]] || { echo "project lookup failed: HTTP $code: $(head -c 300 /tmp/ttp-project.json)" >&2; exit 1; }
     jq '{name, region, status, postgres: .database.version}' /tmp/ttp-project.json
-    query "select version() as version" | jq -r '.[0].version'
+    query_json "select to_json(version()) as j" | jq -r .
     echo "tables in public: $(public_tables)"
     ;;
   apply)
@@ -42,8 +35,8 @@ commit;" > /dev/null
     ;;
   verify)
     got="$(mktemp)"
-    query "$(cat "$ROOT/harness/db/catalog-fingerprint.sql")" | jq -r '.[0].fingerprint' | jq -S . > "$got"
+    query_json "select fingerprint::json as j from ($(sed '/^--/d; s/;[[:space:]]*$//' "$ROOT/harness/db/catalog-fingerprint.sql")) f" | jq -S . > "$got"
     if diff -u "$ROOT/harness/db/expected-catalog.json" "$got"; then echo "catalog matches the production snapshot"; else echo "catalog DIFFERS from the production snapshot (diff above)" >&2; exit 1; fi
     ;;
-  *) sed -n '2,12p' "$0"; exit 2 ;;
+  *) sed -n '2,13p' "$0"; exit 2 ;;
 esac
