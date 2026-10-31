@@ -1,12 +1,14 @@
 # New environment: Supabase + Render
 
-**Status (2026-10-31, later):** Seed script and math check are ready and pass on a local PG17 copy of the snapshot. Nothing has been run against the hosted project yet: the first read-only `check` is waiting on Chad to confirm the project ref (see "Blocked: confirm the project ref"). Scope and rules are in `CLAUDE.md` ("New environment rules").
+**Status (2026-10-31, later):** Baseline applied to the new project and verified. Next: Chad adds a test login, then the fixture seed and math check (step 3 under "Handoff"). Scope and rules are in `CLAUDE.md` ("New environment rules").
 
-## Blocked: confirm the project ref
+## Hosted project baseline (done 2026-10-31)
 
-- `SUPABASE_PROJECT_REF` in the environment is the project **URL** (`https://mmutdqklchnftziikqpq.supabase.co`), not the bare ref. The scripts now accept either form (`harness/db/mgmt-api.sh`) and refuse anything that isn't a 20-letter ref.
-- Nothing in the repo records Lovable's production ref, so the session cannot prove `mmutdqklchnftziikqpq` is the new project and not production. The session's permission check stopped the first `check` call for that reason, and no request was sent.
-- To unblock: Chad confirms `mmutdqklchnftziikqpq` is the new project (Supabase dashboard → the new project → Settings → General → Reference ID) and allows the call. Setting the variable to the bare ref is tidier but not required. Scope and rules are in `CLAUDE.md` ("New environment rules").
+- Chad confirmed `mmutdqklchnftziikqpq` is the new project. `SUPABASE_PROJECT_REF` holds the project URL; the scripts accept that form.
+- `check`: name `Tip-Tally-Pro`, `us-east-1`, `ACTIVE_HEALTHY`, PostgreSQL 17.11, 0 tables in `public`.
+- `apply`: `docs/handoff/schema.sql` applied in one transaction; 17 tables in `public`, including `tip_override_audit`.
+- `verify`: "catalog matches the production snapshot". No differences, including grants.
+- After apply: 0 users in `auth.users`, 0 locations.
 
 ## Local migration test
 
@@ -118,9 +120,9 @@ Deploy only after the baseline is applied. Until Google sign-in is rewired, use 
 
 ## Handoff: next steps, in order
 
-0. Chad confirms the project ref (see "Blocked" above).
-1. `harness/db/remote-baseline.sh check`: confirm the ref, PG17, and 0 tables in `public`. Stop and report if any of that is wrong.
-2. `harness/db/remote-baseline.sh apply`, then `verify`. Report any catalog diff before going further.
+0. ~~Chad confirms the project ref.~~ Done.
+1. ~~`harness/db/remote-baseline.sh check`: confirm the ref, PG17, and 0 tables in `public`. Stop and report if any of that is wrong.~~ Done.
+2. ~~`harness/db/remote-baseline.sh apply`, then `verify`. Report any catalog diff before going further.~~ Done, no diff.
 3. Chad adds a test login (Authentication → Users → Add user). Then `harness/db/remote-seed.sh seed <that email>` and `harness/db/remote-seed.sh check`. *(Script written and tested locally.)*
 4. Tell Chad to deploy on Render, then smoke-test sign-in and the payroll screen.
 5. Then replace the Lovable-only pieces, one PR each: Google sign-in (Supabase OAuth), Twilio direct, error reporting.
