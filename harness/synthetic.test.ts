@@ -7,11 +7,16 @@ import { readFileSync } from "node:fs";
 import { computeShiftV1 as compute } from "./reference-pipeline-v1.ts";
 import { SYNTHETIC_CASES } from "./synthetic-cases.ts";
 
-const fx = JSON.parse(readFileSync(new URL("../fixtures/synthetic_v1.json", import.meta.url), "utf8"));
+const fx = JSON.parse(
+  readFileSync(new URL("../fixtures/synthetic_v1.json", import.meta.url), "utf8"),
+);
 const staffRole = new Map<string, string>(fx.staff.map((s: any) => [s.id, s.role]));
 
 test("synthetic fixture covers every defined case", () => {
-  assert.deepStrictEqual(fx.cases.map((c: any) => c.key), SYNTHETIC_CASES.map((c) => c.shift.key));
+  assert.deepStrictEqual(
+    fx.cases.map((c: any) => c.key),
+    SYNTHETIC_CASES.map((c) => c.shift.key),
+  );
   assert.equal(new Set(fx.cases.map((c: any) => c.key)).size, fx.cases.length);
 });
 
