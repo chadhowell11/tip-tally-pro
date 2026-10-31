@@ -13,3 +13,5 @@ begin
     $f$;
   end if;
 end $$;
+-- storage.buckets.public is added by the hosted storage service's own migrations; the bare image lacks it.
+alter table storage.buckets add column if not exists public boolean default false;

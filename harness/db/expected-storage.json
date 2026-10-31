@@ -1,0 +1,15 @@
+{
+  "buckets": [
+    "logos|logos|false"
+  ],
+  "policies": [
+    "Admins delete logos|PERMISSIVE|DELETE|authenticated|((bucket_id = 'logos'::text) AND has_role(auth.uid(), 'admin'::app_role))|",
+    "Admins update logos|PERMISSIVE|UPDATE|authenticated|((bucket_id = 'logos'::text) AND has_role(auth.uid(), 'admin'::app_role))|",
+    "Admins upload logos|PERMISSIVE|INSERT|authenticated||((bucket_id = 'logos'::text) AND has_role(auth.uid(), 'admin'::app_role))",
+    "Anyone can view logos|PERMISSIVE|SELECT|anon,authenticated|(bucket_id = 'logos'::text)|",
+    "Logos are publicly readable|PERMISSIVE|SELECT|public|(bucket_id = 'logos'::text)|",
+    "Managers delete their location logo|PERMISSIVE|DELETE|authenticated|((bucket_id = 'logos'::text) AND can_manage_location(auth.uid(), ((storage.foldername(name))[1])::uuid))|",
+    "Managers update their location logo|PERMISSIVE|UPDATE|authenticated|((bucket_id = 'logos'::text) AND can_manage_location(auth.uid(), ((storage.foldername(name))[1])::uuid))|",
+    "Managers upload their location logo|PERMISSIVE|INSERT|authenticated||((bucket_id = 'logos'::text) AND can_manage_location(auth.uid(), ((storage.foldername(name))[1])::uuid))"
+  ]
+}

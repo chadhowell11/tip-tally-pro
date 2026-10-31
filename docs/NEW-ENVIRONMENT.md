@@ -91,6 +91,18 @@ Session setup (done by Chad in the CH-HUB environment):
 
 After the baseline is in: revoke the access token (supabase.com → Account → Access Tokens).
 
+## Logo storage
+
+The schema snapshot covers `public` only, so production's logo storage is added separately with `harness/db/remote-storage.sh`. It creates the private `logos` bucket (no MIME or size limit) and production's 8 storage policies, copied verbatim from `docs/handoff/DATABASE.md`. Without it, uploading a logo in Admin or Onboarding fails.
+
+| Command | What it does |
+| --- | --- |
+| `apply` | Runs `harness/db/storage-logos.sql` in one transaction. Refuses if the bucket already exists. |
+| `verify` | Compares the bucket and every `storage.objects` policy with `harness/db/expected-storage.json`. |
+
+- **Tested locally** (PG17 + snapshot): `apply` then `verify` match; a second `apply` is refused. The local image lacks `storage.buckets.public`, so the local-only shim adds it.
+- **Not yet applied to the hosted project:** it needs a short-lived access token (see "Applying the baseline").
+
 ## Seeding the fixtures
 
 `harness/db/remote-seed.sh` (SQL from `harness/db/seed-fixtures.ts`), same Management API path:
@@ -150,4 +162,6 @@ Deploy only after the baseline is applied. Google sign-in works once the setup i
 2. ~~`harness/db/remote-baseline.sh apply`, then `verify`. Report any catalog diff before going further.~~ Done, no diff.
 3. ~~Chad adds a test login (Authentication → Users → Add user). Then `harness/db/remote-seed.sh seed <that email>` and `harness/db/remote-seed.sh check`.~~ Done, all match.
 4. Tell Chad to deploy on Render, then smoke-test sign-in and the payroll screen.
-5. Then replace the Lovable-only pieces, one PR each: ~~Google sign-in (Supabase OAuth)~~ (done in code; setup in "Google sign-in"), Twilio direct, error reporting.
+5. Logo storage: `harness/db/remote-storage.sh apply`, then `verify` (needs a token).
+6. Production data migration: `docs/DATA-MIGRATION-PLAN.md` (draft, waiting for Chad's approval).
+7. Then replace the Lovable-only pieces, one PR each: ~~Google sign-in (Supabase OAuth)~~ (done in code; setup in "Google sign-in"), Twilio direct, error reporting.
