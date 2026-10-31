@@ -8,13 +8,16 @@ Phases 1–2 only: the golden baseline and engine consolidation. The full brief 
 Phase 3 and later (schema, save RPC, rule changes, re-platforming) are out of scope until Chad opens them.
 
 ## Non-negotiables
-1. Never change a calculation output without a fixture that fails first and passes after, plus Chad's written sign-off on the dollar impact.
+1. Never change a calculation output without a fixture that fails first and passes after, plus written sign-off on the dollar impact from both Chad and Kevin. Kevin approves every math change; never assume a business rule.
 2. Never mix behavior-preserving and behavior-changing work in the same commit or PR.
 3. Never edit `fixtures/expected_v1.json`. If parity fails, the code is wrong. An approved variance goes in `fixtures/approved_variances.json` with its dollar impact.
 4. `harness/reference-pipeline-v1.ts` is a frozen copy of today's behavior. Never "fix" it.
 5. No production data or secrets in the repo. Never create `.env` with production values. Local dev uses staging only, and no staging environment exists yet, so do not run the app against any database in Phases 1–2.
 6. Work on branches and open PRs into `main`. Chad reviews and merges. No force-push to `main`.
 7. Do not touch the Supabase schema, RLS, migrations, or the save path in Phases 1–2.
+
+## Math findings
+Every calculation issue or discrepancy found, however small, gets an ID and a row in `docs/MATH-FINDINGS.md` in the same PR that finds it. Kevin's decision is recorded there before any fix is merged.
 
 ## Commands
 - `npm test` runs the golden parity test. It must report 212 of 212 passing before and after every change.

@@ -1,6 +1,6 @@
 # Pipeline variances: every screen compared with payroll
 
-**Status:** Phase 1 characterization, for Chad's review. Nothing in this document has been changed in the app.
+**Status:** Phase 1 characterization, for Chad's and Kevin's review. Each item has an ID in `docs/MATH-FINDINGS.md`. Nothing in this document has been changed in the app.
 **Baseline:** payroll (`reports.tsx`), frozen as `harness/reference-pipeline-v1.ts` and locked by `fixtures/expected_v1.json`.
 **Data:** the 210 real Carson's Table shifts (`fixtures/inputs.json`) plus 42 synthetic edge shifts (`fixtures/synthetic_v1.json`).
 **Source of every number below:** `fixtures/characterization_v1.json`, regenerated with `npm run gen:characterization` and enforced by `npm run test:characterize`.
@@ -149,4 +149,4 @@ When each consumer moves onto `computeShift`, its numbers should become payroll'
 | Shift form | None on saved shifts. Live numbers stop counting blank cards. |
 | `total_sales` select fix | None |
 
-Each move will update `fixtures/characterization_v1.json` in its own commit, and that diff is the before/after record. **Chad's sign-off is needed per consumer before merging.**
+Each move will update `fixtures/characterization_v1.json` in its own commit, and that diff is the before/after record. **Chad's and Kevin's sign-off is needed per consumer before merging.**
