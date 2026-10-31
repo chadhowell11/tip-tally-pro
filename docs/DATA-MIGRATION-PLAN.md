@@ -1,6 +1,6 @@
 # Production data migration plan (Lovable → new Supabase project)
 
-**Status: APPROVED (Chad, 2026-10-31: "proceed with data import"), with the decisions below. Rehearsed locally; the hosted load is next.** Lovable stays live until go-live.
+**Status: LOADED into the new project (2026-10-31); all automated checks pass. Waiting on Chad's sign-in, logo re-upload and the payroll CSV comparison before go/no-go.** Lovable stays live until go-live.
 
 ## Chad's decisions (2026-10-31)
 
@@ -45,6 +45,16 @@ On `supabase/postgres:17.4.1.020` + snapshot + logo storage + an operator login 
 2. `harness/db/remote-migrate.sh load <backup> <Carson's Table location id> chadhowell11@gmail.com`
 3. `harness/db/remote-migrate.sh check …`, `remote-baseline.sh verify`, `remote-storage.sh verify`.
 4. Chad: sign in, re-upload the logo in Admin, download the payroll CSV for a recent pay period from both Lovable and the new app; Claude diffs them (must match to the cent). Then go/no-go.
+
+### Hosted load (done 2026-10-31)
+- Before: `remote-baseline.sh check` (Tip-Tally-Pro, PG17, 17 tables), `remote-baseline.sh verify`, `remote-storage.sh verify` and `remote-seed.sh check` all passed.
+- `remote-seed.sh reset`, then `remote-migrate.sh load`: loaded in one transaction.
+- `remote-migrate.sh check`: every table matches the export (row counts and checksums, incl. the 3 logins and their identities); 210 of 210 shifts and 240 of 240 period totals equal `expected_v1.json`; credit tips $66,220.83, take-home $65,883.01.
+- After: `remote-baseline.sh verify` and `remote-storage.sh verify` match; no app trigger left disabled; 4 logins (3 production + Chad), 1 location (Carson's Table) with its owner and Chad as manager.
+- Left over: one file in the `logos` bucket from Chad's earlier test upload under the removed fixture location's folder. Harmless, nothing points to it.
+- The local rehearsal database and unpacked copies are deleted. The backup file stays in the session's scratch folder until go/no-go (`wipe` needs it), then is deleted.
+
+Still to do (acceptance test 2): Chad signs in, re-uploads the logo in Admin, and downloads the payroll CSV for a recent pay period from Lovable and from the new app; the two files must match to the cent. Then go/no-go.
 
 ## Goal and acceptance test
 
