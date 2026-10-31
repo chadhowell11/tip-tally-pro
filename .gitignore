@@ -30,3 +30,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Secrets and production data — never commit
+.env
+.env.*
+!.env.example
+*.backup
+*.dump
+*.sql.gz

@@ -1,0 +1,9479 @@
+{
+ "source": "Carson's Table production backup 2026-10-31, scrubbed: staff UUIDs replaced by S01..S24; no names, emails, phones",
+ "settings": {
+  "bar_tip_pct": 0.1,
+  "runner_busser_tip_pct": 0.1,
+  "bartender_tip_pct": 0.1,
+  "max_tipout_pct": 0.3,
+  "rb_basis": "tips",
+  "rounding_mode": "nearest",
+  "use_net_sales": false,
+  "sales_tax_pct": 0,
+  "cc_fee_enabled": false,
+  "cc_fee_pct": 0,
+  "weight_runner": 1,
+  "weight_busser": 1,
+  "weight_bar_back": 0.5,
+  "weight_hostess": 0.5
+ },
+ "staff": [
+  {
+   "id": "S01",
+   "role": "server",
+   "active": true
+  },
+  {
+   "id": "S02",
+   "role": "bartender",
+   "active": true
+  },
+  {
+   "id": "S03",
+   "role": "server",
+   "active": true
+  },
+  {
+   "id": "S04",
+   "role": "server",
+   "active": false
+  },
+  {
+   "id": "S05",
+   "role": "hostess",
+   "active": true
+  },
+  {
+   "id": "S06",
+   "role": "hostess",
+   "active": false
+  },
+  {
+   "id": "S07",
+   "role": "runner",
+   "active": false
+  },
+  {
+   "id": "S08",
+   "role": "runner",
+   "active": true
+  },
+  {
+   "id": "S09",
+   "role": "server",
+   "active": true
+  },
+  {
+   "id": "S10",
+   "role": "server",
+   "active": true
+  },
+  {
+   "id": "S11",
+   "role": "server",
+   "active": true
+  },
+  {
+   "id": "S12",
+   "role": "bartender",
+   "active": true
+  },
+  {
+   "id": "S13",
+   "role": "server",
+   "active": false
+  },
+  {
+   "id": "S14",
+   "role": "server",
+   "active": false
+  },
+  {
+   "id": "S15",
+   "role": "runner",
+   "active": true
+  },
+  {
+   "id": "S16",
+   "role": "runner",
+   "active": false
+  },
+  {
+   "id": "S17",
+   "role": "server",
+   "active": true
+  },
+  {
+   "id": "S18",
+   "role": "runner",
+   "active": false
+  },
+  {
+   "id": "S19",
+   "role": "runner",
+   "active": true
+  },
+  {
+   "id": "S20",
+   "role": "runner",
+   "active": true
+  },
+  {
+   "id": "S21",
+   "role": "server",
+   "active": true
+  },
+  {
+   "id": "S22",
+   "role": "server",
+   "active": true
+  },
+  {
+   "id": "S23",
+   "role": "server",
+   "active": true
+  },
+  {
+   "id": "S24",
+   "role": "runner",
+   "active": false
+  }
+ ],
+ "shifts": [
+  {
+   "key": "2026-06-30-PM",
+   "shift_date": "2026-06-30",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 284,
+     "credit_tips": 70,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 4,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 82,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 4,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 265,
+     "credit_tips": 334,
+     "total_sales": 0,
+     "rb_tip_override": 17,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S04",
+     "hours_worked": 5,
+     "role": "busser"
+    }
+   ]
+  },
+  {
+   "key": "2026-07-01-AM",
+   "shift_date": "2026-07-01",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 0,
+     "credit_tips": 10,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-01-PM",
+   "shift_date": "2026-07-01",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S22",
+     "cash_owed": 0,
+     "credit_tips": 243,
+     "lbw_sales": 463,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 206,
+     "lbw_sales": 361,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 215,
+     "credit_tips": 100,
+     "lbw_sales": 88,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 115,
+     "credit_tips": 165,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-02-AM",
+   "shift_date": "2026-07-02",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 0,
+     "credit_tips": 75,
+     "lbw_sales": 45,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 82,
+     "credit_tips": 51,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-02-PM",
+   "shift_date": "2026-07-02",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 72,
+     "credit_tips": 199,
+     "lbw_sales": 258,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 15,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 103,
+     "credit_tips": 92,
+     "lbw_sales": 199,
+     "total_sales": 0,
+     "bar_tip_override": 15,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S13",
+     "cash_owed": 129,
+     "credit_tips": 195,
+     "lbw_sales": 297,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 72.79,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-03-AM",
+   "shift_date": "2026-07-03",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 0,
+     "credit_tips": 35,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": 4,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 117,
+     "credit_tips": 6,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-03-PM",
+   "shift_date": "2026-07-03",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S17",
+     "cash_owed": 196,
+     "credit_tips": 28,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S22",
+     "cash_owed": 0,
+     "credit_tips": 132,
+     "lbw_sales": 297,
+     "total_sales": 0,
+     "bar_tip_override": 28,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 131,
+     "lbw_sales": 140,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 268,
+     "lbw_sales": 476,
+     "total_sales": 0,
+     "bar_tip_override": 47,
+     "rb_tip_override": 15,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 129,
+     "credit_tips": 196,
+     "lbw_sales": 152,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 15,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 139,
+     "credit_tips": 87,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-04-AM",
+   "shift_date": "2026-07-04",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S04",
+     "cash_owed": 0,
+     "credit_tips": 88,
+     "lbw_sales": 50,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 52,
+     "credit_tips": 29,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-04-PM",
+   "shift_date": "2026-07-04",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S13",
+     "cash_owed": 0,
+     "credit_tips": 45,
+     "lbw_sales": 44,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S17",
+     "cash_owed": 0,
+     "credit_tips": 145,
+     "lbw_sales": 65,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 105.79,
+     "lbw_sales": 168,
+     "total_sales": 0,
+     "bar_tip_override": 15,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 115.47,
+     "lbw_sales": 142,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 8,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 122,
+     "lbw_sales": 177,
+     "total_sales": 0,
+     "bar_tip_override": 16,
+     "rb_tip_override": 8,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 53,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S12",
+     "cash_owed": 6.59,
+     "credit_tips": 53,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S19",
+     "hours_worked": 5,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S18",
+     "hours_worked": 5,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S04",
+     "hours_worked": 5,
+     "role": "busser"
+    }
+   ]
+  },
+  {
+   "key": "2026-07-06-AM",
+   "shift_date": "2026-07-06",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 114,
+     "credit_tips": 96,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-06-PM",
+   "shift_date": "2026-07-06",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 69,
+     "credit_tips": 50,
+     "lbw_sales": 74,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 111,
+     "lbw_sales": 129,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 5,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-07-07-AM",
+   "shift_date": "2026-07-07",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 111,
+     "credit_tips": 10,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 127,
+     "credit_tips": 10,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-07-PM",
+   "shift_date": "2026-07-07",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S17",
+     "cash_owed": 0,
+     "credit_tips": 165,
+     "lbw_sales": 97,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 12,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 198,
+     "credit_tips": 201,
+     "lbw_sales": 250,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 15,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 451,
+     "lbw_sales": 500,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 20,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 149,
+     "credit_tips": 189,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S04",
+     "hours_worked": 5,
+     "role": "busser"
+    }
+   ]
+  },
+  {
+   "key": "2026-07-08-AM",
+   "shift_date": "2026-07-08",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S22",
+     "cash_owed": 92,
+     "credit_tips": 67,
+     "lbw_sales": 61,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 95,
+     "credit_tips": 82,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-08-PM",
+   "shift_date": "2026-07-08",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 42,
+     "lbw_sales": 30,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S22",
+     "cash_owed": 33,
+     "credit_tips": 41,
+     "lbw_sales": 50,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S23",
+     "cash_owed": 0,
+     "credit_tips": 20,
+     "lbw_sales": 44,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 4,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 72,
+     "lbw_sales": 113,
+     "total_sales": 0,
+     "bar_tip_override": 13,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 15,
+     "lbw_sales": 85,
+     "total_sales": 0,
+     "bar_tip_override": 9,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 17,
+     "credit_tips": 142,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S24",
+     "hours_worked": 5,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-07-09-AM",
+   "shift_date": "2026-07-09",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 182,
+     "credit_tips": 45,
+     "lbw_sales": 50,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 53,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-09-PM",
+   "shift_date": "2026-07-09",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 70,
+     "credit_tips": 0,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 30,
+     "lbw_sales": 22,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 2,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S11",
+     "cash_owed": 0,
+     "credit_tips": 101,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 111.45,
+     "total_sales": 0,
+     "rb_tip_override": 10,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-10-AM",
+   "shift_date": "2026-07-10",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 0,
+     "credit_tips": 67,
+     "lbw_sales": 64,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 64,
+     "credit_tips": 52,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-10-PM",
+   "shift_date": "2026-07-10",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S22",
+     "cash_owed": 92,
+     "credit_tips": 66,
+     "lbw_sales": 76,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 133,
+     "credit_tips": 160,
+     "lbw_sales": 205,
+     "total_sales": 0,
+     "bar_tip_override": 20,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S17",
+     "cash_owed": 153,
+     "credit_tips": 130,
+     "lbw_sales": 150,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 10,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 174,
+     "lbw_sales": 175,
+     "total_sales": 0,
+     "bar_tip_override": 17,
+     "rb_tip_override": 10,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 200,
+     "lbw_sales": 275,
+     "total_sales": 0,
+     "bar_tip_override": 20,
+     "rb_tip_override": 15,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 4,
+     "credit_tips": 17,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S02",
+     "cash_owed": 4,
+     "credit_tips": 17,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-11-AM",
+   "shift_date": "2026-07-11",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 40,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 18,
+     "credit_tips": 84,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-11-PM",
+   "shift_date": "2026-07-11",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S23",
+     "cash_owed": 25,
+     "credit_tips": 37,
+     "lbw_sales": 152,
+     "total_sales": 0,
+     "bar_tip_override": 15,
+     "rb_tip_override": 7,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 236,
+     "lbw_sales": 225,
+     "total_sales": 0,
+     "bar_tip_override": 23,
+     "rb_tip_override": 13,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S17",
+     "cash_owed": 0,
+     "credit_tips": 209,
+     "lbw_sales": 200,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 16,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 44,
+     "lbw_sales": 160,
+     "total_sales": 0,
+     "bar_tip_override": 16,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 662,
+     "credit_tips": 163,
+     "lbw_sales": 200,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 64,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 64,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S18",
+     "hours_worked": 4.8,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S19",
+     "hours_worked": 4.8,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S04",
+     "hours_worked": 5,
+     "role": "busser"
+    }
+   ]
+  },
+  {
+   "key": "2026-07-13-AM",
+   "shift_date": "2026-07-13",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 0,
+     "credit_tips": 84,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [],
+   "support": []
+  },
+  {
+   "key": "2026-07-13-PM",
+   "shift_date": "2026-07-13",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 0,
+     "credit_tips": 20,
+     "lbw_sales": 27,
+     "total_sales": 0,
+     "bar_tip_override": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 102,
+     "lbw_sales": 196,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S23",
+     "cash_owed": 0,
+     "credit_tips": 120,
+     "lbw_sales": 144,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 200,
+     "credit_tips": 93,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-14-AM",
+   "shift_date": "2026-07-14",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 56,
+     "credit_tips": 0,
+     "lbw_sales": 20,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 0,
+     "credit_tips": 0,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-14-PM",
+   "shift_date": "2026-07-14",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 60,
+     "lbw_sales": 100,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 2,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S17",
+     "cash_owed": 0,
+     "credit_tips": 65,
+     "lbw_sales": 76,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 180,
+     "lbw_sales": 250,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 5,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 0,
+     "credit_tips": 129,
+     "total_sales": 0,
+     "rb_tip_override": 6,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S12",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S24",
+     "hours_worked": 5,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-07-15-AM",
+   "shift_date": "2026-07-15",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S22",
+     "cash_owed": 87.81,
+     "credit_tips": 48,
+     "lbw_sales": 34,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 104,
+     "credit_tips": 31,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-15-PM",
+   "shift_date": "2026-07-15",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S22",
+     "cash_owed": 0,
+     "credit_tips": 246,
+     "lbw_sales": 364,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 10,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S23",
+     "cash_owed": 0,
+     "credit_tips": 126,
+     "lbw_sales": 110,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 6,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 180,
+     "lbw_sales": 137,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 8,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 181,
+     "lbw_sales": 160,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 8,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 9,
+     "credit_tips": 45,
+     "total_sales": 0,
+     "rb_tip_override": 2,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S24",
+     "hours_worked": 5,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-07-16-AM",
+   "shift_date": "2026-07-16",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 98,
+     "credit_tips": 40,
+     "lbw_sales": 53,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 64,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-16-PM",
+   "shift_date": "2026-07-16",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S17",
+     "cash_owed": 0,
+     "credit_tips": 30,
+     "lbw_sales": 44,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 2,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 25,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 2,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S11",
+     "cash_owed": 167,
+     "credit_tips": 25,
+     "lbw_sales": 60,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S04",
+     "cash_owed": 166,
+     "credit_tips": 200,
+     "lbw_sales": 300,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 7,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 190,
+     "total_sales": 0,
+     "rb_tip_override": 10,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S18",
+     "hours_worked": 5,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-07-17-AM",
+   "shift_date": "2026-07-17",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 0,
+     "credit_tips": 51,
+     "lbw_sales": 84,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 140,
+     "credit_tips": 29,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-17-PM",
+   "shift_date": "2026-07-17",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 238,
+     "lbw_sales": 250,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 20,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 259,
+     "lbw_sales": 300,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 20,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S22",
+     "cash_owed": 148,
+     "credit_tips": 233,
+     "lbw_sales": 270,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 20,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S04",
+     "cash_owed": 133,
+     "credit_tips": 113,
+     "lbw_sales": 103,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 9,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S17",
+     "cash_owed": 75,
+     "credit_tips": 214,
+     "lbw_sales": 175,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 15,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 160,
+     "credit_tips": 439,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S11",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S18",
+     "hours_worked": 5,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S05",
+     "hours_worked": 5,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-07-18-AM",
+   "shift_date": "2026-07-18",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S23",
+     "cash_owed": 357,
+     "credit_tips": 60,
+     "lbw_sales": 122,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S22",
+     "cash_owed": 0,
+     "credit_tips": 106,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-18-PM",
+   "shift_date": "2026-07-18",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 292,
+     "lbw_sales": 378,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S04",
+     "cash_owed": 322,
+     "credit_tips": 178,
+     "lbw_sales": 278,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 308,
+     "lbw_sales": 445,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 219,
+     "lbw_sales": 187,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S23",
+     "cash_owed": 0,
+     "credit_tips": 291,
+     "lbw_sales": 472,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 0,
+     "credit_tips": 306,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S22",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S18",
+     "hours_worked": 5,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S05",
+     "hours_worked": 5,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-07-20-AM",
+   "shift_date": "2026-07-20",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 42,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-20-PM",
+   "shift_date": "2026-07-20",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 111,
+     "lbw_sales": 100,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 4,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S23",
+     "cash_owed": 0,
+     "credit_tips": 85,
+     "lbw_sales": 140,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 98,
+     "total_sales": 0,
+     "rb_tip_override": 5,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S06",
+     "hours_worked": 5,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-07-21-AM",
+   "shift_date": "2026-07-21",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 0,
+     "credit_tips": 55,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 216,
+     "credit_tips": 32,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-21-PM",
+   "shift_date": "2026-07-21",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 75,
+     "lbw_sales": 30,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 2,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 35,
+     "credit_tips": 21,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S17",
+     "cash_owed": 0,
+     "credit_tips": 112,
+     "lbw_sales": 111,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 5,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 246,
+     "credit_tips": 147,
+     "total_sales": 0,
+     "rb_tip_override": 7,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 5,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-07-22-AM",
+   "shift_date": "2026-07-22",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S22",
+     "cash_owed": 0,
+     "credit_tips": 46,
+     "lbw_sales": 28,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 127,
+     "credit_tips": 34,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-22-PM",
+   "shift_date": "2026-07-22",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S22",
+     "cash_owed": 0,
+     "credit_tips": 76,
+     "lbw_sales": 49,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 4,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S23",
+     "cash_owed": 0,
+     "credit_tips": 108,
+     "lbw_sales": 186,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 4,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 28,
+     "lbw_sales": 100,
+     "total_sales": 0,
+     "bar_tip_override": 10,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 104,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 5,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 106,
+     "credit_tips": 105,
+     "total_sales": 0,
+     "rb_tip_override": 6,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 5,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-07-23-AM",
+   "shift_date": "2026-07-23",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 18,
+     "credit_tips": 37,
+     "lbw_sales": 27,
+     "total_sales": 0,
+     "bar_tip_override": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 33,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-23-PM",
+   "shift_date": "2026-07-23",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 42,
+     "credit_tips": 70,
+     "lbw_sales": 111,
+     "total_sales": 0,
+     "bar_tip_override": 10,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S17",
+     "cash_owed": 0,
+     "credit_tips": 98,
+     "lbw_sales": 148,
+     "total_sales": 0,
+     "bar_tip_override": 7,
+     "rb_tip_override": 9,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 121,
+     "credit_tips": 90,
+     "lbw_sales": 145,
+     "total_sales": 0,
+     "bar_tip_override": 14,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 180,
+     "credit_tips": 278,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S12",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S18",
+     "hours_worked": 5,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S23",
+     "hours_worked": 5,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-07-24-AM",
+   "shift_date": "2026-07-24",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 0,
+     "credit_tips": 103,
+     "lbw_sales": 154,
+     "total_sales": 0,
+     "bar_tip_override": 10,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S05",
+     "cash_owed": 0,
+     "credit_tips": 14,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 105,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-24-PM",
+   "shift_date": "2026-07-24",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S22",
+     "cash_owed": 0,
+     "credit_tips": 140,
+     "lbw_sales": 230,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 10,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 153,
+     "lbw_sales": 114,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 12,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S17",
+     "cash_owed": 0,
+     "credit_tips": 183,
+     "lbw_sales": 57,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 16,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 162,
+     "credit_tips": 170,
+     "lbw_sales": 269,
+     "total_sales": 0,
+     "bar_tip_override": 26,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 214,
+     "lbw_sales": 264,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 18,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 216,
+     "credit_tips": 198,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S12",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S19",
+     "hours_worked": 5,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S18",
+     "hours_worked": 5,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S05",
+     "hours_worked": 5,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-07-25-AM",
+   "shift_date": "2026-07-25",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S23",
+     "cash_owed": 0,
+     "credit_tips": 76,
+     "lbw_sales": 80,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S05",
+     "cash_owed": 33,
+     "credit_tips": 8,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 40,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-25-PM",
+   "shift_date": "2026-07-25",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S23",
+     "cash_owed": 182,
+     "credit_tips": 152,
+     "lbw_sales": 148,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 13,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 262,
+     "lbw_sales": 360,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 20,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 235,
+     "lbw_sales": 383,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 441,
+     "credit_tips": 232,
+     "lbw_sales": 223,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S17",
+     "cash_owed": 191,
+     "credit_tips": 223,
+     "lbw_sales": 282,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 150,
+     "credit_tips": 206,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S12",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S19",
+     "hours_worked": 5,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S05",
+     "hours_worked": 5,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-07-27-AM",
+   "shift_date": "2026-07-27",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 172,
+     "credit_tips": 89,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-27-PM",
+   "shift_date": "2026-07-27",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 160,
+     "lbw_sales": 201,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 7,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S23",
+     "cash_owed": 83,
+     "credit_tips": 54,
+     "lbw_sales": 56,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 69,
+     "lbw_sales": 5,
+     "total_sales": 0,
+     "bar_tip_override": 0,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 16,
+     "credit_tips": 81,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S04",
+     "hours_worked": 5,
+     "role": "busser"
+    }
+   ]
+  },
+  {
+   "key": "2026-07-28-AM",
+   "shift_date": "2026-07-28",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 25,
+     "credit_tips": 9,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 12,
+     "credit_tips": 105,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-28-PM",
+   "shift_date": "2026-07-28",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 67,
+     "lbw_sales": 144,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 2,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 166,
+     "lbw_sales": 223,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 7,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S17",
+     "cash_owed": 0,
+     "credit_tips": 187,
+     "lbw_sales": 250,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 8,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 29,
+     "credit_tips": 121,
+     "total_sales": 0,
+     "rb_tip_override": 6,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S04",
+     "hours_worked": 5,
+     "role": "busser"
+    }
+   ]
+  },
+  {
+   "key": "2026-07-29-AM",
+   "shift_date": "2026-07-29",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S22",
+     "cash_owed": 42,
+     "credit_tips": 85,
+     "lbw_sales": 66,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 125,
+     "credit_tips": 58,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-29-PM",
+   "shift_date": "2026-07-29",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 76,
+     "lbw_sales": 50,
+     "total_sales": 0,
+     "bar_tip_override": 0,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S23",
+     "cash_owed": 203,
+     "credit_tips": 20,
+     "lbw_sales": 99,
+     "total_sales": 0,
+     "bar_tip_override": 0,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S22",
+     "cash_owed": 0,
+     "credit_tips": 130,
+     "lbw_sales": 159,
+     "total_sales": 0,
+     "bar_tip_override": 0,
+     "rb_tip_override": 4,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 132,
+     "credit_tips": 64,
+     "lbw_sales": 66,
+     "total_sales": 0,
+     "bar_tip_override": 0,
+     "rb_tip_override": 4,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 191,
+     "total_sales": 0,
+     "rb_tip_override": 9,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-07-30-AM",
+   "shift_date": "2026-07-30",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 72,
+     "credit_tips": 50,
+     "lbw_sales": 48,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 42,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-30-PM",
+   "shift_date": "2026-07-30",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 72,
+     "lbw_sales": 11,
+     "total_sales": 0,
+     "bar_tip_override": 0,
+     "rb_tip_override": 4,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 163,
+     "lbw_sales": 130,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 7,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S17",
+     "cash_owed": 0,
+     "credit_tips": 55,
+     "lbw_sales": 26,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 2,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 124,
+     "credit_tips": 193,
+     "total_sales": 0,
+     "rb_tip_override": 8,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S11",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S12",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S04",
+     "hours_worked": 4,
+     "role": "busser"
+    }
+   ]
+  },
+  {
+   "key": "2026-07-31-AM",
+   "shift_date": "2026-07-31",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 0,
+     "credit_tips": 12,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 35,
+     "credit_tips": 18,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-07-31-PM",
+   "shift_date": "2026-07-31",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S21",
+     "cash_owed": 99,
+     "credit_tips": 160,
+     "lbw_sales": 210,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S17",
+     "cash_owed": 88,
+     "credit_tips": 243,
+     "lbw_sales": 120,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 238,
+     "lbw_sales": 280,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S22",
+     "cash_owed": 0,
+     "credit_tips": 321,
+     "lbw_sales": 430,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 168,
+     "credit_tips": 292,
+     "lbw_sales": 359,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 311,
+     "credit_tips": 257,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S11",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S18",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S19",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-01-AM",
+   "shift_date": "2026-08-01",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S23",
+     "cash_owed": 0,
+     "credit_tips": 15,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 0,
+     "credit_tips": 10,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-01-PM",
+   "shift_date": "2026-08-01",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 196,
+     "lbw_sales": 170,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 213,
+     "lbw_sales": 208,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 222,
+     "lbw_sales": 250,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S04",
+     "cash_owed": 0,
+     "credit_tips": 120,
+     "lbw_sales": 90,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S23",
+     "cash_owed": 0,
+     "credit_tips": 178,
+     "lbw_sales": 220,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 47,
+     "credit_tips": 288.23,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S22",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S18",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S19",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-03-AM",
+   "shift_date": "2026-08-03",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 0,
+     "credit_tips": 0,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [],
+   "support": []
+  },
+  {
+   "key": "2026-08-03-PM",
+   "shift_date": "2026-08-03",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 125,
+     "lbw_sales": 31,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 6,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S23",
+     "cash_owed": 89,
+     "credit_tips": 75,
+     "lbw_sales": 74,
+     "total_sales": 0,
+     "bar_tip_override": 7,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 80,
+     "credit_tips": 115,
+     "lbw_sales": 26,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 5,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 165,
+     "credit_tips": 72,
+     "total_sales": 0,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S06",
+     "hours_worked": 5,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-04-AM",
+   "shift_date": "2026-08-04",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 80,
+     "credit_tips": 22,
+     "lbw_sales": 41,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 0,
+     "credit_tips": 37,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-04-PM",
+   "shift_date": "2026-08-04",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S10",
+     "cash_owed": 0,
+     "credit_tips": 102,
+     "lbw_sales": 140,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 4,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S17",
+     "cash_owed": 112,
+     "credit_tips": 70,
+     "lbw_sales": 74,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 103,
+     "lbw_sales": 65,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 5,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 36,
+     "credit_tips": 238,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S04",
+     "hours_worked": 0,
+     "role": "busser"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-05-AM",
+   "shift_date": "2026-08-05",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [],
+   "support": []
+  },
+  {
+   "key": "2026-08-05-PM",
+   "shift_date": "2026-08-05",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 123,
+     "lbw_sales": 232,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 5,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S10",
+     "cash_owed": 0,
+     "credit_tips": 64,
+     "lbw_sales": 93,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 24,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-06-AM",
+   "shift_date": "2026-08-06",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 0,
+     "credit_tips": 76,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 30,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-06-PM",
+   "shift_date": "2026-08-06",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S10",
+     "cash_owed": 0,
+     "credit_tips": 114,
+     "lbw_sales": 54,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 5,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 184,
+     "credit_tips": 137,
+     "lbw_sales": 160,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 6,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 90,
+     "credit_tips": 184,
+     "lbw_sales": 175,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 8,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 12,
+     "credit_tips": 170,
+     "total_sales": 0,
+     "rb_tip_override": 8,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S11",
+       "hours_worked": 6.5
+      },
+      {
+       "staff_id": "S12",
+       "hours_worked": 5.5
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S04",
+     "hours_worked": 1,
+     "role": "busser"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-07-AM",
+   "shift_date": "2026-08-07",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 24,
+     "credit_tips": 103,
+     "lbw_sales": 64,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 24,
+     "credit_tips": 110,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-07-PM",
+   "shift_date": "2026-08-07",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 204,
+     "credit_tips": 182,
+     "lbw_sales": 243,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 13,
+     "credit_tips": 187,
+     "lbw_sales": 197,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S17",
+     "cash_owed": 132,
+     "credit_tips": 192,
+     "lbw_sales": 185,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S10",
+     "cash_owed": 201,
+     "credit_tips": 138,
+     "lbw_sales": 211,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 100,
+     "credit_tips": 253,
+     "lbw_sales": 312,
+     "total_sales": 0,
+     "bar_tip_override": 31,
+     "rb_tip_override": 15,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 6,
+     "credit_tips": 230,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S11",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S19",
+     "hours_worked": 2,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S05",
+     "hours_worked": 2,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S18",
+     "hours_worked": 2,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-08-AM",
+   "shift_date": "2026-08-08",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S10",
+     "cash_owed": 52,
+     "credit_tips": 17,
+     "lbw_sales": 27,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 97,
+     "credit_tips": 36,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-08-PM",
+   "shift_date": "2026-08-08",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S17",
+     "cash_owed": 150,
+     "credit_tips": 184,
+     "lbw_sales": 182,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 17,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S10",
+     "cash_owed": 0,
+     "credit_tips": 162,
+     "lbw_sales": 258,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 295,
+     "lbw_sales": 308,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 22,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 142,
+     "credit_tips": 323,
+     "lbw_sales": 363,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 23,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 311,
+     "lbw_sales": 309,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 9,
+     "credit_tips": 349,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 6
+      },
+      {
+       "staff_id": "S12",
+       "hours_worked": 4
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S18",
+     "hours_worked": 1,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S04",
+     "hours_worked": 1,
+     "role": "busser"
+    },
+    {
+     "staff_id": "S19",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-10-AM",
+   "shift_date": "2026-08-10",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 0,
+     "credit_tips": 64,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-10-PM",
+   "shift_date": "2026-08-10",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S10",
+     "cash_owed": 0,
+     "credit_tips": 111,
+     "lbw_sales": 130,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 5,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S23",
+     "cash_owed": 0,
+     "credit_tips": 220,
+     "lbw_sales": 199,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 10,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 70,
+     "credit_tips": 95,
+     "total_sales": 0,
+     "rb_tip_override": 5,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-11-AM",
+   "shift_date": "2026-08-11",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 0,
+     "credit_tips": 15.5,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 0,
+     "credit_tips": 46,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-11-PM",
+   "shift_date": "2026-08-11",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S10",
+     "cash_owed": 0,
+     "credit_tips": 129,
+     "lbw_sales": 155,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 5,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 155,
+     "lbw_sales": 165,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 6,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 37,
+     "credit_tips": 103,
+     "total_sales": 0,
+     "rb_tip_override": 5,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S04",
+     "hours_worked": 1,
+     "role": "busser"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-12-AM",
+   "shift_date": "2026-08-12",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 0,
+     "credit_tips": 60.63,
+     "lbw_sales": 52,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 64,
+     "credit_tips": 72,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-12-PM",
+   "shift_date": "2026-08-12",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S23",
+     "cash_owed": 0,
+     "credit_tips": 26,
+     "lbw_sales": 34,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 109,
+     "lbw_sales": 79,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 5,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 97,
+     "lbw_sales": 163,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 4,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 182.25,
+     "total_sales": 0,
+     "rb_tip_override": 9,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-13-AM",
+   "shift_date": "2026-08-13",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 145,
+     "credit_tips": 30,
+     "lbw_sales": 56,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 18,
+     "credit_tips": 31,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-13-PM",
+   "shift_date": "2026-08-13",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 31,
+     "lbw_sales": 42,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 1,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 58,
+     "credit_tips": 40,
+     "lbw_sales": 26,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 2,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S10",
+     "cash_owed": 58,
+     "credit_tips": 21,
+     "lbw_sales": 29,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 1,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 0,
+     "credit_tips": 193,
+     "total_sales": 0,
+     "rb_tip_override": 5,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S11",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S12",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S04",
+     "hours_worked": 1,
+     "role": "busser"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-14-AM",
+   "shift_date": "2026-08-14",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 0,
+     "credit_tips": 104,
+     "lbw_sales": 71,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 88.25,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-14-PM",
+   "shift_date": "2026-08-14",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 286,
+     "lbw_sales": 340,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 226,
+     "lbw_sales": 223,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S17",
+     "cash_owed": 0,
+     "credit_tips": 233,
+     "lbw_sales": 239,
+     "total_sales": 0,
+     "bar_tip_override": 24,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 322,
+     "credit_tips": 168,
+     "lbw_sales": 210,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S22",
+     "cash_owed": 0,
+     "credit_tips": 316,
+     "lbw_sales": 388,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 124,
+     "credit_tips": 300,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S11",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S19",
+     "hours_worked": 1,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S05",
+     "hours_worked": 1,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S04",
+     "hours_worked": 1,
+     "role": "busser"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-15-AM",
+   "shift_date": "2026-08-15",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S22",
+     "cash_owed": 70,
+     "credit_tips": 134,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-15-PM",
+   "shift_date": "2026-08-15",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S17",
+     "cash_owed": 0,
+     "credit_tips": 146,
+     "lbw_sales": 109,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S12",
+     "cash_owed": 190,
+     "credit_tips": 232,
+     "lbw_sales": 300,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S23",
+     "cash_owed": 145,
+     "credit_tips": 232,
+     "lbw_sales": 220,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S10",
+     "cash_owed": 0,
+     "credit_tips": 154,
+     "lbw_sales": 198,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 400,
+     "lbw_sales": 392,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 497,
+     "credit_tips": 247,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S22",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S19",
+     "hours_worked": 1,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S04",
+     "hours_worked": 1,
+     "role": "busser"
+    },
+    {
+     "staff_id": "S05",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-17-AM",
+   "shift_date": "2026-08-17",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 203,
+     "credit_tips": 93,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [],
+   "support": []
+  },
+  {
+   "key": "2026-08-17-PM",
+   "shift_date": "2026-08-17",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": null,
+     "cash_owed": 0,
+     "credit_tips": 836,
+     "lbw_sales": 494,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 39,
+     "split_mode": "hours",
+     "members": [
+      {
+       "staff_id": "S09",
+       "hours_worked": 5
+      },
+      {
+       "staff_id": "S23",
+       "hours_worked": 5
+      },
+      {
+       "staff_id": "S10",
+       "hours_worked": 0.75
+      }
+     ]
+    },
+    {
+     "staff_id": "S10",
+     "cash_owed": 0,
+     "credit_tips": 117,
+     "lbw_sales": 127,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 5,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 162.46,
+     "total_sales": 0,
+     "rb_tip_override": 8,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-18-AM",
+   "shift_date": "2026-08-18",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 18,
+     "credit_tips": 15,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 81,
+     "credit_tips": 13,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-18-PM",
+   "shift_date": "2026-08-18",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 145,
+     "lbw_sales": 155,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S17",
+     "cash_owed": 0,
+     "credit_tips": 117,
+     "lbw_sales": 100,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 78,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-19-AM",
+   "shift_date": "2026-08-19",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S22",
+     "cash_owed": 0,
+     "credit_tips": 23,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 0,
+     "credit_tips": 29,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-19-PM",
+   "shift_date": "2026-08-19",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 33,
+     "credit_tips": 168,
+     "lbw_sales": 112,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 8,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 134,
+     "credit_tips": 89,
+     "lbw_sales": 164,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 4,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 130,
+     "total_sales": 0,
+     "rb_tip_override": 7,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-20-AM",
+   "shift_date": "2026-08-20",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 0,
+     "credit_tips": 58,
+     "lbw_sales": 16,
+     "total_sales": 0,
+     "bar_tip_override": 2,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 18,
+     "credit_tips": 44,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-20-PM",
+   "shift_date": "2026-08-20",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 160,
+     "lbw_sales": 128,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S10",
+     "cash_owed": 0,
+     "credit_tips": 65,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 145,
+     "lbw_sales": 170,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 0,
+     "credit_tips": 217,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S11",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S12",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-21-AM",
+   "shift_date": "2026-08-21",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S14",
+     "cash_owed": 33,
+     "credit_tips": 25,
+     "lbw_sales": 28,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 56,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-21-PM",
+   "shift_date": "2026-08-21",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 153,
+     "lbw_sales": 254,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 7,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S22",
+     "cash_owed": 131,
+     "credit_tips": 91,
+     "lbw_sales": 100,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S17",
+     "cash_owed": 279,
+     "credit_tips": 20,
+     "lbw_sales": 79,
+     "total_sales": 0,
+     "bar_tip_override": 6,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 289,
+     "credit_tips": 30,
+     "lbw_sales": 59,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 115,
+     "lbw_sales": 106,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 5,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 120,
+     "credit_tips": 107,
+     "total_sales": 0,
+     "rb_tip_override": 6,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S19",
+     "hours_worked": 1,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S20",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-22-AM",
+   "shift_date": "2026-08-22",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 38,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-22-PM",
+   "shift_date": "2026-08-22",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S23",
+     "cash_owed": 0,
+     "credit_tips": 143,
+     "lbw_sales": 100,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 317,
+     "lbw_sales": 318,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 310,
+     "credit_tips": 116,
+     "lbw_sales": 161,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 78,
+     "credit_tips": 187,
+     "lbw_sales": 210,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 14,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S10",
+     "cash_owed": 0,
+     "credit_tips": 247,
+     "lbw_sales": 251,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 18,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 27,
+     "credit_tips": 246,
+     "total_sales": 0,
+     "rb_tip_override": 25,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S12",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S19",
+     "hours_worked": 1,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S20",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-24-AM",
+   "shift_date": "2026-08-24",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 0,
+     "credit_tips": 110,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [],
+   "support": []
+  },
+  {
+   "key": "2026-08-24-PM",
+   "shift_date": "2026-08-24",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S10",
+     "cash_owed": 143,
+     "credit_tips": 60,
+     "lbw_sales": 60,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S23",
+     "cash_owed": 0,
+     "credit_tips": 52,
+     "lbw_sales": 23,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 102,
+     "credit_tips": 52,
+     "lbw_sales": 35,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 173.48,
+     "total_sales": 0,
+     "rb_tip_override": 9,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-25-AM",
+   "shift_date": "2026-08-25",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 13,
+     "credit_tips": 90,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-25-PM",
+   "shift_date": "2026-08-25",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S10",
+     "cash_owed": 0,
+     "credit_tips": 104,
+     "lbw_sales": 213,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 4,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 150,
+     "lbw_sales": 66,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 91,
+     "credit_tips": 19,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S20",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-26-AM",
+   "shift_date": "2026-08-26",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S22",
+     "cash_owed": 70,
+     "credit_tips": 88,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-26-PM",
+   "shift_date": "2026-08-26",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S23",
+     "cash_owed": 0,
+     "credit_tips": 60,
+     "lbw_sales": 92,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 6,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 104,
+     "lbw_sales": 55,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 5,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 54,
+     "credit_tips": 92,
+     "lbw_sales": 83,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 41,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-27-AM",
+   "shift_date": "2026-08-27",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 213,
+     "credit_tips": 48,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-27-PM",
+   "shift_date": "2026-08-27",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 16,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S10",
+     "cash_owed": 84,
+     "credit_tips": 30,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 8,
+     "credit_tips": 329,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S11",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S22",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S07",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-28-AM",
+   "shift_date": "2026-08-28",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 20,
+     "credit_tips": 57,
+     "lbw_sales": 55,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 63,
+     "credit_tips": 38,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-28-PM",
+   "shift_date": "2026-08-28",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 229,
+     "lbw_sales": 257,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S10",
+     "cash_owed": 0,
+     "credit_tips": 157,
+     "lbw_sales": 215,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 143,
+     "lbw_sales": 110,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 142,
+     "lbw_sales": 104,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 41,
+     "credit_tips": 413,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S11",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S20",
+     "hours_worked": 1,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S19",
+     "hours_worked": 1,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S05",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-29-AM",
+   "shift_date": "2026-08-29",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 51,
+     "credit_tips": 31,
+     "lbw_sales": 22,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S22",
+     "cash_owed": 65,
+     "credit_tips": 69,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-29-PM",
+   "shift_date": "2026-08-29",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 216,
+     "lbw_sales": 297,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": null,
+     "cash_owed": 255,
+     "credit_tips": 424,
+     "lbw_sales": 496,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S21",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S10",
+       "hours_worked": 0
+      }
+     ]
+    },
+    {
+     "staff_id": "S11",
+     "cash_owed": 0,
+     "credit_tips": 259.11,
+     "lbw_sales": 243,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S23",
+     "cash_owed": 360,
+     "credit_tips": 167,
+     "lbw_sales": 220,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 153,
+     "credit_tips": 275,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S22",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 1,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S19",
+     "hours_worked": 1,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S07",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-08-31-AM",
+   "shift_date": "2026-08-31",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 0,
+     "credit_tips": 57,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-08-31-PM",
+   "shift_date": "2026-08-31",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 100,
+     "lbw_sales": 93,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 5,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S23",
+     "cash_owed": 0,
+     "credit_tips": 102,
+     "lbw_sales": 114,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 5,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 88,
+     "lbw_sales": 54,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 14,
+     "credit_tips": 90,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-01-AM",
+   "shift_date": "2026-09-01",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 313,
+     "credit_tips": 65,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-01-PM",
+   "shift_date": "2026-09-01",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S10",
+     "cash_owed": 0,
+     "credit_tips": 58,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 367,
+     "credit_tips": 30,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 2,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 280,
+     "total_sales": 0,
+     "rb_tip_override": 14,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S16",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-02-AM",
+   "shift_date": "2026-09-02",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 25,
+     "credit_tips": 56,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 22,
+     "credit_tips": 87,
+     "total_sales": 0,
+     "rb_tip_override": 4,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-02-PM",
+   "shift_date": "2026-09-02",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S23",
+     "cash_owed": 0,
+     "credit_tips": 35,
+     "lbw_sales": 14,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 5,
+     "credit_tips": 27,
+     "total_sales": 0,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-03-AM",
+   "shift_date": "2026-09-03",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 91,
+     "credit_tips": 36,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-03-PM",
+   "shift_date": "2026-09-03",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S10",
+     "cash_owed": 0,
+     "credit_tips": 170,
+     "lbw_sales": 90,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 8,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S22",
+     "cash_owed": 104,
+     "credit_tips": 0,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 19,
+     "credit_tips": 170,
+     "total_sales": 0,
+     "rb_tip_override": 8,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S20",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-04-AM",
+   "shift_date": "2026-09-04",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 122,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-04-PM",
+   "shift_date": "2026-09-04",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S03",
+     "cash_owed": 423,
+     "credit_tips": 96,
+     "lbw_sales": 246,
+     "total_sales": 0,
+     "bar_tip_override": 25,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 106,
+     "credit_tips": 159,
+     "lbw_sales": 263,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S10",
+     "cash_owed": 86,
+     "credit_tips": 143,
+     "lbw_sales": 128,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 6,
+     "credit_tips": 306,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S11",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S12",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S19",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-05-AM",
+   "shift_date": "2026-09-05",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S05",
+     "cash_owed": 0,
+     "credit_tips": 15,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 173,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-05-PM",
+   "shift_date": "2026-09-05",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 152,
+     "lbw_sales": 145,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S10",
+     "cash_owed": 0,
+     "credit_tips": 68,
+     "lbw_sales": 98,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 182,
+     "lbw_sales": 241,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 97,
+     "lbw_sales": 182,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S23",
+     "cash_owed": 0,
+     "credit_tips": 101,
+     "lbw_sales": 111,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S08",
+     "cash_owed": 0,
+     "credit_tips": 43,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 24,
+     "credit_tips": 78,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S20",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S19",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-08-AM",
+   "shift_date": "2026-09-08",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 196,
+     "credit_tips": 107,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-08-PM",
+   "shift_date": "2026-09-08",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S10",
+     "cash_owed": 0,
+     "credit_tips": 25,
+     "lbw_sales": 20,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 1,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 34,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 1,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 30,
+     "lbw_sales": 30,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 1,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 42,
+     "credit_tips": 0,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S08",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-09-AM",
+   "shift_date": "2026-09-09",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S22",
+     "cash_owed": 35,
+     "credit_tips": 23,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-09-PM",
+   "shift_date": "2026-09-09",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 145,
+     "lbw_sales": 100,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 6,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S12",
+     "cash_owed": 123,
+     "credit_tips": 80,
+     "lbw_sales": 103,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S23",
+     "cash_owed": 0,
+     "credit_tips": 7,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 20,
+     "total_sales": 0,
+     "rb_tip_override": 1,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-10-AM",
+   "shift_date": "2026-09-10",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 20,
+     "credit_tips": 31,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-10-PM",
+   "shift_date": "2026-09-10",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 50,
+     "lbw_sales": 60,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S10",
+     "cash_owed": 0,
+     "credit_tips": 0,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 0,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 46,
+     "credit_tips": 139,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S11",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S12",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-11-AM",
+   "shift_date": "2026-09-11",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 0,
+     "credit_tips": 60,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-11-PM",
+   "shift_date": "2026-09-11",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 111,
+     "lbw_sales": 90,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 100,
+     "lbw_sales": 98,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S11",
+     "cash_owed": 35,
+     "credit_tips": 20,
+     "lbw_sales": 52,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S10",
+     "cash_owed": 0,
+     "credit_tips": 75,
+     "lbw_sales": 49,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 7,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 166,
+     "lbw_sales": 150,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 16,
+     "credit_tips": 128,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S19",
+     "hours_worked": 1,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S05",
+     "hours_worked": 2,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S20",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-12-AM",
+   "shift_date": "2026-09-12",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S05",
+     "cash_owed": 23,
+     "credit_tips": 34,
+     "lbw_sales": 26,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S22",
+     "cash_owed": 0,
+     "credit_tips": 54,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-12-PM",
+   "shift_date": "2026-09-12",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 156,
+     "lbw_sales": 111,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 406,
+     "credit_tips": 69,
+     "lbw_sales": 167,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S22",
+     "cash_owed": 167,
+     "credit_tips": 225,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 50,
+     "credit_tips": 42,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S19",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S08",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S05",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-13-AM",
+   "shift_date": "2026-09-13",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [],
+   "support": []
+  },
+  {
+   "key": "2026-09-13-PM",
+   "shift_date": "2026-09-13",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [],
+   "support": []
+  },
+  {
+   "key": "2026-09-14-AM",
+   "shift_date": "2026-09-14",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 22,
+     "credit_tips": 136,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-14-PM",
+   "shift_date": "2026-09-14",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S23",
+     "cash_owed": 0,
+     "credit_tips": 28,
+     "lbw_sales": 24,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 2,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 37,
+     "lbw_sales": 46,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 2,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 0,
+     "lbw_sales": 25,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 83,
+     "credit_tips": 3,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-15-AM",
+   "shift_date": "2026-09-15",
+   "period": "AM",
+   "support_split_mode": "shared",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 108,
+     "credit_tips": 60,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-15-PM",
+   "shift_date": "2026-09-15",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S10",
+     "cash_owed": 0,
+     "credit_tips": 63,
+     "lbw_sales": 34,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 75.66,
+     "lbw_sales": 95,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 74,
+     "lbw_sales": 50,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 20,
+     "credit_tips": 46,
+     "total_sales": 0,
+     "rb_tip_override": 2,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S08",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-16-AM",
+   "shift_date": "2026-09-16",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S22",
+     "cash_owed": 0,
+     "credit_tips": 115,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-16-PM",
+   "shift_date": "2026-09-16",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 104.71,
+     "lbw_sales": 161,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 4,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S23",
+     "cash_owed": 0,
+     "credit_tips": 25,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S20",
+     "cash_owed": 0,
+     "credit_tips": 18,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 185,
+     "credit_tips": 59,
+     "total_sales": 0,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S23",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-17-AM",
+   "shift_date": "2026-09-17",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 245,
+     "credit_tips": 103,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-17-PM",
+   "shift_date": "2026-09-17",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S10",
+     "cash_owed": 0,
+     "credit_tips": 56,
+     "lbw_sales": 56,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 74,
+     "lbw_sales": 38,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S22",
+     "cash_owed": 0,
+     "credit_tips": 36,
+     "lbw_sales": 85,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 0,
+     "credit_tips": 119,
+     "total_sales": 0,
+     "rb_tip_override": 6,
+     "split_mode": "hours",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 4
+      },
+      {
+       "staff_id": "S21",
+       "hours_worked": 6
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S08",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-18-AM",
+   "shift_date": "2026-09-18",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S05",
+     "cash_owed": 27.44,
+     "credit_tips": 33.5,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 66,
+     "credit_tips": 51,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-18-PM",
+   "shift_date": "2026-09-18",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S22",
+     "cash_owed": 86,
+     "credit_tips": 143,
+     "lbw_sales": 191,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S10",
+     "cash_owed": 0,
+     "credit_tips": 212,
+     "lbw_sales": 160,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 17,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 256,
+     "credit_tips": 168,
+     "lbw_sales": 224,
+     "total_sales": 0,
+     "bar_tip_override": 22,
+     "rb_tip_override": 12,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 270,
+     "credit_tips": 147,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S12",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S20",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S08",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S19",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-19-AM",
+   "shift_date": "2026-09-19",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S05",
+     "cash_owed": 0,
+     "credit_tips": 51,
+     "lbw_sales": 60,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 40,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-19-PM",
+   "shift_date": "2026-09-19",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S21",
+     "cash_owed": 82,
+     "credit_tips": 50,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 30,
+     "lbw_sales": 20,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S10",
+     "cash_owed": 0,
+     "credit_tips": 50,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S23",
+     "cash_owed": 0,
+     "credit_tips": 202,
+     "lbw_sales": 209,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 9,
+     "credit_tips": 96.73,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S12",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S08",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S19",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S05",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S20",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-21-AM",
+   "shift_date": "2026-09-21",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 31,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [],
+   "support": []
+  },
+  {
+   "key": "2026-09-21-PM",
+   "shift_date": "2026-09-21",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 43,
+     "lbw_sales": 20,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 2,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S23",
+     "cash_owed": 0,
+     "credit_tips": 33,
+     "lbw_sales": 30,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 2,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 37,
+     "credit_tips": 22,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-22-AM",
+   "shift_date": "2026-09-22",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 63,
+     "credit_tips": 43.79,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [],
+   "support": []
+  },
+  {
+   "key": "2026-09-22-PM",
+   "shift_date": "2026-09-22",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 170,
+     "lbw_sales": 200,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 7,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 117,
+     "lbw_sales": 201,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 5,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S20",
+     "cash_owed": 0,
+     "credit_tips": 23,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 51,
+     "total_sales": 0,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S08",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-23-AM",
+   "shift_date": "2026-09-23",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 18,
+     "credit_tips": 148,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-23-PM",
+   "shift_date": "2026-09-23",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S03",
+     "cash_owed": 21,
+     "credit_tips": 116,
+     "lbw_sales": 100,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 16,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 63,
+     "lbw_sales": 16,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 154,
+     "credit_tips": 108,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-24-AM",
+   "shift_date": "2026-09-24",
+   "period": "AM",
+   "support_split_mode": "shared",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 162,
+     "credit_tips": 84,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-24-PM",
+   "shift_date": "2026-09-24",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 0,
+     "credit_tips": 34,
+     "lbw_sales": 39,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 2,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S21",
+     "cash_owed": 81,
+     "credit_tips": 93,
+     "total_sales": 0,
+     "rb_tip_override": 4,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S08",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-25-AM",
+   "shift_date": "2026-09-25",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S05",
+     "cash_owed": 0,
+     "credit_tips": 70,
+     "lbw_sales": 139,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 25,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-25-PM",
+   "shift_date": "2026-09-25",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 200,
+     "lbw_sales": 197,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S20",
+     "cash_owed": 0,
+     "credit_tips": 207,
+     "lbw_sales": 180,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 195,
+     "lbw_sales": 209,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 176,
+     "credit_tips": 136,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S12",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S08",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-26-AM",
+   "shift_date": "2026-09-26",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S05",
+     "cash_owed": 92,
+     "credit_tips": 15,
+     "lbw_sales": 18,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 75,
+     "credit_tips": 10,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-26-PM",
+   "shift_date": "2026-09-26",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 110,
+     "lbw_sales": 50,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S20",
+     "cash_owed": 0,
+     "credit_tips": 215,
+     "lbw_sales": 205,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 91,
+     "lbw_sales": 78,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 445,
+     "credit_tips": 189,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S11",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S08",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S05",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-28-AM",
+   "shift_date": "2026-09-28",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 59,
+     "credit_tips": 28,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [],
+   "support": []
+  },
+  {
+   "key": "2026-09-28-PM",
+   "shift_date": "2026-09-28",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 145,
+     "lbw_sales": 165,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 300,
+     "credit_tips": 85,
+     "lbw_sales": 40,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 375,
+     "credit_tips": 10,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-29-AM",
+   "shift_date": "2026-09-29",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 171,
+     "credit_tips": 105,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-29-PM",
+   "shift_date": "2026-09-29",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S20",
+     "cash_owed": 117,
+     "credit_tips": 121,
+     "lbw_sales": 135,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 5,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 156,
+     "credit_tips": 119,
+     "lbw_sales": 150,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 5,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 10,
+     "credit_tips": 112,
+     "total_sales": 0,
+     "rb_tip_override": 8,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S08",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-09-30-AM",
+   "shift_date": "2026-09-30",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 124,
+     "credit_tips": 102,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-09-30-PM",
+   "shift_date": "2026-09-30",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 166,
+     "lbw_sales": 160,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 8,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 132,
+     "total_sales": 0,
+     "rb_tip_override": 7,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S15",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-10-01-AM",
+   "shift_date": "2026-10-01",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 15,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-01-PM",
+   "shift_date": "2026-10-01",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 72,
+     "lbw_sales": 12,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 4,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S20",
+     "cash_owed": 0,
+     "credit_tips": 60,
+     "lbw_sales": 60,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 362,
+     "credit_tips": 134,
+     "total_sales": 0,
+     "rb_tip_override": 7,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S11",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S21",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S08",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-10-02-AM",
+   "shift_date": "2026-10-02",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S05",
+     "cash_owed": 0,
+     "credit_tips": 68,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 104,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-02-PM",
+   "shift_date": "2026-10-02",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 193,
+     "lbw_sales": 248,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S20",
+     "cash_owed": 194,
+     "credit_tips": 85,
+     "lbw_sales": 154,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 202,
+     "lbw_sales": 140,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 150,
+     "lbw_sales": 163,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 102,
+     "credit_tips": 117,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S11",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S12",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S08",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S05",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S15",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-10-03-AM",
+   "shift_date": "2026-10-03",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 18,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-03-PM",
+   "shift_date": "2026-10-03",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 199,
+     "lbw_sales": 180,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 219,
+     "lbw_sales": 200,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 78,
+     "credit_tips": 195,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S12",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S21",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S08",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S05",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S15",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-10-05-AM",
+   "shift_date": "2026-10-05",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 194,
+     "credit_tips": 44,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-05-PM",
+   "shift_date": "2026-10-05",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 57,
+     "credit_tips": 30,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 25,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 184,
+     "credit_tips": 132,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-06-AM",
+   "shift_date": "2026-10-06",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 0,
+     "credit_tips": 45,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-06-PM",
+   "shift_date": "2026-10-06",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S03",
+     "cash_owed": 350,
+     "credit_tips": 0,
+     "lbw_sales": 115,
+     "total_sales": 0,
+     "bar_tip_override": 11,
+     "rb_tip_override": 5,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 46,
+     "credit_tips": 3,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S08",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-10-07-AM",
+   "shift_date": "2026-10-07",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S11",
+     "cash_owed": 0,
+     "credit_tips": 27,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-07-PM",
+   "shift_date": "2026-10-07",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 70,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 0,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 70,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S15",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-10-08-AM",
+   "shift_date": "2026-10-08",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 66,
+     "credit_tips": 52,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-08-PM",
+   "shift_date": "2026-10-08",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 65,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 4,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 130,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S08",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-10-09-AM",
+   "shift_date": "2026-10-09",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S05",
+     "cash_owed": 21,
+     "credit_tips": 53,
+     "lbw_sales": 28,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 15,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-09-PM",
+   "shift_date": "2026-10-09",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 379,
+     "credit_tips": 102,
+     "lbw_sales": 107,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S11",
+     "cash_owed": 0,
+     "credit_tips": 43,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 4,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 138,
+     "lbw_sales": 77,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 463,
+     "credit_tips": 54,
+     "lbw_sales": 186,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 369,
+     "credit_tips": 150,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S11",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S15",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-10-10-AM",
+   "shift_date": "2026-10-10",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S05",
+     "cash_owed": 53,
+     "credit_tips": 11,
+     "lbw_sales": 67,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 32,
+     "credit_tips": 42,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-10-PM",
+   "shift_date": "2026-10-10",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 136,
+     "lbw_sales": 100,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 127,
+     "lbw_sales": 103,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S20",
+     "cash_owed": 0,
+     "credit_tips": 153,
+     "lbw_sales": 158,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 102,
+     "credit_tips": 224,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S21",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S15",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S05",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-10-12-AM",
+   "shift_date": "2026-10-12",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 43,
+     "credit_tips": 41,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-12-PM",
+   "shift_date": "2026-10-12",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 156,
+     "credit_tips": 175,
+     "lbw_sales": 135,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 210,
+     "lbw_sales": 156,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 82,
+     "credit_tips": 304,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S21",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-13-AM",
+   "shift_date": "2026-10-13",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 30,
+     "credit_tips": 132,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-13-PM",
+   "shift_date": "2026-10-13",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 235,
+     "lbw_sales": 175,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 11,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 186,
+     "lbw_sales": 260,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 9,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 253,
+     "credit_tips": 30,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S15",
+     "hours_worked": 1,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-10-14-AM",
+   "shift_date": "2026-10-14",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 80,
+     "credit_tips": 25,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-14-PM",
+   "shift_date": "2026-10-14",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S03",
+     "cash_owed": 257,
+     "credit_tips": 178,
+     "lbw_sales": 210,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S20",
+     "cash_owed": 371,
+     "credit_tips": 122,
+     "lbw_sales": 208,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 10,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 95,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-10-15-AM",
+   "shift_date": "2026-10-15",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 96,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-15-PM",
+   "shift_date": "2026-10-15",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S09",
+     "cash_owed": 0,
+     "credit_tips": 66,
+     "lbw_sales": 46,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 3,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S20",
+     "cash_owed": 0,
+     "credit_tips": 50,
+     "lbw_sales": 26,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 2,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 202,
+     "credit_tips": 167,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S21",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S08",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-10-16-AM",
+   "shift_date": "2026-10-16",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 56,
+     "credit_tips": 54,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-16-PM",
+   "shift_date": "2026-10-16",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S20",
+     "cash_owed": 0,
+     "credit_tips": 57,
+     "lbw_sales": 61,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S09",
+     "cash_owed": 188,
+     "credit_tips": 111,
+     "lbw_sales": 232,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 277,
+     "lbw_sales": 258,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 0,
+     "credit_tips": 160,
+     "total_sales": 0,
+     "rb_tip_override": 16,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S21",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S15",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-10-17-AM",
+   "shift_date": "2026-10-17",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 128,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 71,
+     "credit_tips": 57,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S12",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-17-PM",
+   "shift_date": "2026-10-17",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S21",
+     "cash_owed": 99,
+     "credit_tips": 241,
+     "lbw_sales": 300,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 10,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S20",
+     "cash_owed": 0,
+     "credit_tips": 66,
+     "lbw_sales": 42,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 254,
+     "credit_tips": 174,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S12",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S15",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-10-19-AM",
+   "shift_date": "2026-10-19",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [],
+   "support": []
+  },
+  {
+   "key": "2026-10-19-PM",
+   "shift_date": "2026-10-19",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 100,
+     "lbw_sales": 66,
+     "total_sales": 0,
+     "bar_tip_override": 7,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S20",
+     "cash_owed": 22,
+     "credit_tips": 75,
+     "lbw_sales": 41,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 334,
+     "credit_tips": 268,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-20-AM",
+   "shift_date": "2026-10-20",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 103,
+     "credit_tips": 132,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-20-PM",
+   "shift_date": "2026-10-20",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S20",
+     "cash_owed": 0,
+     "credit_tips": 61,
+     "lbw_sales": 15,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 179,
+     "lbw_sales": 214,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 8,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 110,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S15",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-10-21-AM",
+   "shift_date": "2026-10-21",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 100,
+     "credit_tips": 156,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-21-PM",
+   "shift_date": "2026-10-21",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S20",
+     "cash_owed": 0,
+     "credit_tips": 30,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 295,
+     "total_sales": 0,
+     "rb_tip_override": 16,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S15",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-10-22-AM",
+   "shift_date": "2026-10-22",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 105,
+     "credit_tips": 145,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-22-PM",
+   "shift_date": "2026-10-22",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S20",
+     "cash_owed": 0,
+     "credit_tips": 133,
+     "lbw_sales": 161,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 6,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 0,
+     "credit_tips": 346,
+     "total_sales": 0,
+     "rb_tip_override": 20,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S21",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S08",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-10-23-AM",
+   "shift_date": "2026-10-23",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 114,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-23-PM",
+   "shift_date": "2026-10-23",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S03",
+     "cash_owed": 360,
+     "credit_tips": 165,
+     "lbw_sales": 280,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 116,
+     "credit_tips": 193,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S02",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S21",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S08",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S15",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S01",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-10-24-PM",
+   "shift_date": "2026-10-24",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S20",
+     "cash_owed": 0,
+     "credit_tips": 125,
+     "lbw_sales": 148,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S21",
+     "cash_owed": 98,
+     "credit_tips": 274,
+     "lbw_sales": 310,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 448,
+     "credit_tips": 290,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S08",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S15",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S01",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-10-26-AM",
+   "shift_date": "2026-10-26",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 18,
+     "credit_tips": 77,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-26-PM",
+   "shift_date": "2026-10-26",
+   "period": "PM",
+   "support_split_mode": "weighted",
+   "servers": [
+    {
+     "staff_id": "S21",
+     "cash_owed": 0,
+     "credit_tips": 35,
+     "lbw_sales": 28,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 72,
+     "lbw_sales": 86,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 58,
+     "credit_tips": 114,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-27-AM",
+   "shift_date": "2026-10-27",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 27,
+     "credit_tips": 30,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-27-PM",
+   "shift_date": "2026-10-27",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 157,
+     "lbw_sales": 157,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 7,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 256,
+     "credit_tips": 79,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S15",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-10-28-AM",
+   "shift_date": "2026-10-28",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 147,
+     "credit_tips": 60,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-28-PM",
+   "shift_date": "2026-10-28",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S03",
+     "cash_owed": 144,
+     "credit_tips": 145,
+     "lbw_sales": 274,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S02",
+     "cash_owed": 216,
+     "credit_tips": 168,
+     "lbw_sales": 311,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 7,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 0,
+     "credit_tips": 243,
+     "total_sales": 0,
+     "rb_tip_override": 12,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S05",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-10-29-AM",
+   "shift_date": "2026-10-29",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S12",
+     "cash_owed": 64,
+     "credit_tips": 10,
+     "total_sales": 0,
+     "rb_tip_override": 0,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-29-PM",
+   "shift_date": "2026-10-29",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 158,
+     "credit_tips": 103,
+     "lbw_sales": 108,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 4,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": null,
+     "cash_owed": 95,
+     "credit_tips": 244,
+     "total_sales": 0,
+     "rb_tip_override": 12,
+     "split_mode": "equal",
+     "members": [
+      {
+       "staff_id": "S12",
+       "hours_worked": 0
+      },
+      {
+       "staff_id": "S21",
+       "hours_worked": 0
+      }
+     ]
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S08",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  },
+  {
+   "key": "2026-10-30-AM",
+   "shift_date": "2026-10-30",
+   "period": "AM",
+   "support_split_mode": "weighted",
+   "servers": [],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 0,
+     "credit_tips": 1,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": []
+  },
+  {
+   "key": "2026-10-30-PM",
+   "shift_date": "2026-10-30",
+   "period": "PM",
+   "support_split_mode": "shared",
+   "servers": [
+    {
+     "staff_id": "S21",
+     "cash_owed": 123,
+     "credit_tips": 348,
+     "lbw_sales": 450,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S03",
+     "cash_owed": 0,
+     "credit_tips": 509,
+     "lbw_sales": 501,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    },
+    {
+     "staff_id": "S05",
+     "cash_owed": 36,
+     "credit_tips": 64,
+     "lbw_sales": 0,
+     "total_sales": 0,
+     "bar_tip_override": null,
+     "rb_tip_override": 4,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "bartenders": [
+    {
+     "staff_id": "S02",
+     "cash_owed": 161,
+     "credit_tips": 292,
+     "total_sales": 0,
+     "rb_tip_override": null,
+     "split_mode": "single",
+     "members": []
+    }
+   ],
+   "support": [
+    {
+     "staff_id": "S08",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S15",
+     "hours_worked": 0,
+     "role": "runner"
+    },
+    {
+     "staff_id": "S05",
+     "hours_worked": 0,
+     "role": "runner"
+    }
+   ]
+  }
+ ]
+}

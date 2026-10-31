@@ -1,0 +1,46 @@
+[
+  {
+    "path": "src/lib/calculations.ts",
+    "sha256": "481e6d903211fecb1749cefca19016fcfedc0e7c5222347b23806eb4ad7443d7"
+  },
+  {
+    "path": "src/lib/location.ts",
+    "sha256": "0199c250034d185e5bea91c0a1988d73d8a7a924378bc696cccfd238b3fde4df"
+  },
+  {
+    "path": "src/lib/shift-messages.ts",
+    "sha256": "71e19be5cbf0c812b366c42134aa66831007909ddd652acbe0ff562ba4adb2d2"
+  },
+  {
+    "path": "src/routes/_authenticated/reports.tsx",
+    "sha256": "01030a663edfd7a0bbad5842780193638ba5b3618c810b18cd50b2a42188de0e"
+  },
+  {
+    "path": "src/routes/_authenticated/daily.tsx",
+    "sha256": "c768f6609185686bd34b4a245ab1c3df84ce24211e53e4bf1b165c23c2692539"
+  },
+  {
+    "path": "src/routes/_authenticated/individual.tsx",
+    "sha256": "355c166500dae5cfc7f8967b642e95d2f702f0509b8f38ba02af78e24273eea8"
+  },
+  {
+    "path": "src/routes/_authenticated/trends.tsx",
+    "sha256": "e70a6971fcf57c3254b7c8dea58dbc3dc5b927a9345222f3bfea5529c88b1fa3"
+  },
+  {
+    "path": "src/routes/_authenticated/shift.new.tsx",
+    "sha256": "6c3759a245e7ec72982ce129be56d97c72c79f70685be7e46d7abe88631febd7"
+  },
+  {
+    "path": "src/lib/print.ts",
+    "sha256": "fb1683b1dec1b94da3eb59119feb2c396bb5e1a5a850e1457246520e3c6ae432"
+  },
+  {
+    "path": "src/lib/download.ts",
+    "sha256": "0ed5c4b2e69952d528bfbf8e42dbd03007e2f6a1c1296643e8a1a1006c8ecec2"
+  },
+  {
+    "path": "src/components/audit-panel.tsx",
+    "sha256": "f17a362fe890550b87f09bb0d6e25e2b7e4c8c0470ff42aaa08c4704e56765de"
+  }
+]

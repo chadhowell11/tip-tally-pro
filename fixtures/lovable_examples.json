@@ -1,0 +1,777 @@
+{
+  "generatedBy": "Executed real src/lib/calculations.ts using Bun; no database reads or writes",
+  "baseSettings": {
+    "bar_tip_pct": 0.05,
+    "runner_busser_tip_pct": 0.2,
+    "bartender_tip_pct": 0.1,
+    "max_tipout_pct": 0.3,
+    "weight_runner": 1,
+    "weight_busser": 1,
+    "weight_bar_back": 1,
+    "weight_hostess": 0.5,
+    "rounding_mode": "none",
+    "rb_basis": "tips"
+  },
+  "cases": [
+    {
+      "name": "Standard server, cent rounding",
+      "input": {
+        "row": {
+          "staff_id": "server-A",
+          "cash_owed": 45,
+          "credit_tips": 200,
+          "lbw_sales": 500,
+          "total_sales": 1500
+        },
+        "settings": {
+          "bar_tip_pct": 0.05,
+          "runner_busser_tip_pct": 0.2,
+          "bartender_tip_pct": 0.1,
+          "max_tipout_pct": 0.3,
+          "weight_runner": 1,
+          "weight_busser": 1,
+          "weight_bar_back": 1,
+          "weight_hostess": 0.5,
+          "rounding_mode": "none",
+          "rb_basis": "tips"
+        }
+      },
+      "output": {
+        "bar_tip": 25,
+        "rb_tip": 35,
+        "takehome": 140,
+        "capped": false
+      },
+      "trace": "rawBar=25; rbBase=200-25=175; rawRb=35; cap=60 and total=60; takehome=140. Cash owed 45 is not subtracted."
+    },
+    {
+      "name": "Standard bartender including server collection",
+      "input": {
+        "row": {
+          "staff_id": "bar-A",
+          "cash_owed": 80,
+          "credit_tips": 300,
+          "total_sales": 1800
+        },
+        "serverBarTipsCollected": 25,
+        "settings": {
+          "bar_tip_pct": 0.05,
+          "runner_busser_tip_pct": 0.2,
+          "bartender_tip_pct": 0.1,
+          "max_tipout_pct": 0.3,
+          "weight_runner": 1,
+          "weight_busser": 1,
+          "weight_bar_back": 1,
+          "weight_hostess": 0.5,
+          "rounding_mode": "none",
+          "rb_basis": "tips"
+        }
+      },
+      "output": {
+        "rb_tip": 30,
+        "takehome": 295,
+        "collected_from_servers": 25,
+        "capped": false
+      },
+      "trace": "rawRb=300×0.1=30; cap=90; takehome=300+25-30=295. Cash owed 80 belongs to house, not takehome."
+    },
+    {
+      "name": "Cap pays support before bar",
+      "input": {
+        "row": {
+          "staff_id": "server-A",
+          "cash_owed": 45,
+          "credit_tips": 100,
+          "lbw_sales": 2000,
+          "total_sales": 1500
+        },
+        "settings": {
+          "bar_tip_pct": 0.05,
+          "runner_busser_tip_pct": 0.2,
+          "bartender_tip_pct": 0.1,
+          "max_tipout_pct": 0.3,
+          "weight_runner": 1,
+          "weight_busser": 1,
+          "weight_bar_back": 1,
+          "weight_hostess": 0.5,
+          "rounding_mode": "none",
+          "rb_basis": "tips"
+        }
+      },
+      "output": {
+        "bar_tip": 30,
+        "rb_tip": 0,
+        "takehome": 70,
+        "capped": true
+      },
+      "trace": "rawBar=100; rbBase=max(0,100-100)=0; rawRb=0; cap=30; bar becomes30; takehome70."
+    },
+    {
+      "name": "Gross-sales basis cap reallocates bar",
+      "input": {
+        "row": {
+          "staff_id": "server-A",
+          "cash_owed": 45,
+          "credit_tips": 200,
+          "lbw_sales": 500,
+          "total_sales": 1500
+        },
+        "settings": {
+          "bar_tip_pct": 0.05,
+          "runner_busser_tip_pct": 0.2,
+          "bartender_tip_pct": 0.1,
+          "max_tipout_pct": 0.3,
+          "weight_runner": 1,
+          "weight_busser": 1,
+          "weight_bar_back": 1,
+          "weight_hostess": 0.5,
+          "rounding_mode": "none",
+          "rb_basis": "sales"
+        }
+      },
+      "output": {
+        "bar_tip": 0,
+        "rb_tip": 60,
+        "takehome": 140,
+        "capped": true
+      },
+      "trace": "rawBar25; rawRb=1500×.2=300; cap60; support min(300,60)=60; bar0; takehome140."
+    },
+    {
+      "name": "Zero-sales, positive tips",
+      "input": {
+        "row": {
+          "staff_id": "server-A",
+          "cash_owed": 45,
+          "credit_tips": 200,
+          "lbw_sales": 0,
+          "total_sales": 0
+        },
+        "settings": {
+          "bar_tip_pct": 0.05,
+          "runner_busser_tip_pct": 0.2,
+          "bartender_tip_pct": 0.1,
+          "max_tipout_pct": 0.3,
+          "weight_runner": 1,
+          "weight_busser": 1,
+          "weight_bar_back": 1,
+          "weight_hostess": 0.5,
+          "rounding_mode": "none",
+          "rb_basis": "tips"
+        }
+      },
+      "output": {
+        "bar_tip": 0,
+        "rb_tip": 40,
+        "takehome": 160,
+        "capped": false
+      },
+      "trace": "rawBar0; support200×.2=40; takehome160."
+    },
+    {
+      "name": "Zero tips with positive sales",
+      "input": {
+        "row": {
+          "staff_id": "server-A",
+          "cash_owed": 45,
+          "credit_tips": 0,
+          "lbw_sales": 500,
+          "total_sales": 1500
+        },
+        "settings": {
+          "bar_tip_pct": 0.05,
+          "runner_busser_tip_pct": 0.2,
+          "bartender_tip_pct": 0.1,
+          "max_tipout_pct": 0.3,
+          "weight_runner": 1,
+          "weight_busser": 1,
+          "weight_bar_back": 1,
+          "weight_hostess": 0.5,
+          "rounding_mode": "none",
+          "rb_basis": "tips"
+        }
+      },
+      "output": {
+        "bar_tip": 0,
+        "rb_tip": 0,
+        "takehome": 0,
+        "capped": true
+      },
+      "trace": "rawBar25; support0; cap0; both final tipouts0; takehome0; capped true."
+    },
+    {
+      "name": "Manual overrides bypass cap",
+      "input": {
+        "row": {
+          "staff_id": "server-A",
+          "cash_owed": 45,
+          "credit_tips": 200,
+          "lbw_sales": 500,
+          "total_sales": 1500,
+          "bar_tip_override": 90,
+          "rb_tip_override": 130
+        },
+        "settings": {
+          "bar_tip_pct": 0.05,
+          "runner_busser_tip_pct": 0.2,
+          "bartender_tip_pct": 0.1,
+          "max_tipout_pct": 0.3,
+          "weight_runner": 1,
+          "weight_busser": 1,
+          "weight_bar_back": 1,
+          "weight_hostess": 0.5,
+          "rounding_mode": "none",
+          "rb_basis": "tips"
+        }
+      },
+      "output": {
+        "bar_tip": 90,
+        "rb_tip": 130,
+        "takehome": -20,
+        "capped": false
+      },
+      "trace": "Automatic total60 is not capped; overrides applied AFTER cap give90+130=220; takehome -20; capped remains false."
+    },
+    {
+      "name": "Tax removed and fee recovered",
+      "input": {
+        "row": {
+          "staff_id": "server-A",
+          "cash_owed": 45,
+          "credit_tips": 200,
+          "lbw_sales": 550,
+          "total_sales": 1650
+        },
+        "settings": {
+          "bar_tip_pct": 0.05,
+          "runner_busser_tip_pct": 0.2,
+          "bartender_tip_pct": 0.1,
+          "max_tipout_pct": 0.3,
+          "weight_runner": 1,
+          "weight_busser": 1,
+          "weight_bar_back": 1,
+          "weight_hostess": 0.5,
+          "rounding_mode": "none",
+          "rb_basis": "tips",
+          "use_net_sales": true,
+          "sales_tax_pct": 0.1,
+          "cc_fee_enabled": true,
+          "cc_fee_pct": 0.03
+        }
+      },
+      "output": {
+        "bar_tip": 24.4,
+        "rb_tip": 33.8,
+        "takehome": 135.8,
+        "capped": true
+      },
+      "trace": "adjustedLBW=550/1.1≈500; adjustedTips=194; rawBar25; support round2((194-25)×.2)=33.8; cap58.2; sum58.8 exceeds; cap keeps33.8 support, bar24.4; takehome135.8."
+    },
+    {
+      "name": "Default whole-dollar nearest rounding",
+      "input": {
+        "row": {
+          "staff_id": "server-A",
+          "cash_owed": 45,
+          "credit_tips": 201.55,
+          "lbw_sales": 523,
+          "total_sales": 1500
+        },
+        "settings": {
+          "bar_tip_pct": 0.05,
+          "runner_busser_tip_pct": 0.2,
+          "bartender_tip_pct": 0.1,
+          "max_tipout_pct": 0.3,
+          "weight_runner": 1,
+          "weight_busser": 1,
+          "weight_bar_back": 1,
+          "weight_hostess": 0.5,
+          "rounding_mode": "nearest",
+          "rb_basis": "tips"
+        }
+      },
+      "output": {
+        "bar_tip": 25,
+        "rb_tip": 35,
+        "takehome": 142,
+        "capped": true
+      },
+      "trace": "rawBar round(26.15)=26; rawRb round(175.55×.2)=35; cap60.465 cuts bar to25.47 and support35; final bar round25.47=25; takehome round141.55=142."
+    },
+    {
+      "name": "Uneven shared server dollar leaves one cent",
+      "input": {
+        "entry": {
+          "staff_id": null,
+          "cash_owed": 1,
+          "credit_tips": 1,
+          "lbw_sales": 1
+        },
+        "entryCalc": {
+          "bar_tip": 1,
+          "rb_tip": 1,
+          "takehome": 1
+        },
+        "splitMode": "equal",
+        "members": [
+          {
+            "staff_id": "A",
+            "hours_worked": 1
+          },
+          {
+            "staff_id": "B",
+            "hours_worked": 1
+          },
+          {
+            "staff_id": "C",
+            "hours_worked": 1
+          }
+        ]
+      },
+      "output": [
+        {
+          "staff_id": "A",
+          "hours_worked": 1,
+          "share": 0.3333333333333333,
+          "cash_owed": 0.33,
+          "credit_tips": 0.33,
+          "lbw_sales": 0.33,
+          "bar_tip": 0.33,
+          "rb_tip": 0.33,
+          "takehome": 0.33
+        },
+        {
+          "staff_id": "B",
+          "hours_worked": 1,
+          "share": 0.3333333333333333,
+          "cash_owed": 0.33,
+          "credit_tips": 0.33,
+          "lbw_sales": 0.33,
+          "bar_tip": 0.33,
+          "rb_tip": 0.33,
+          "takehome": 0.33
+        },
+        {
+          "staff_id": "C",
+          "hours_worked": 1,
+          "share": 0.3333333333333333,
+          "cash_owed": 0.33,
+          "credit_tips": 0.33,
+          "lbw_sales": 0.33,
+          "bar_tip": 0.33,
+          "rb_tip": 0.33,
+          "takehome": 0.33
+        }
+      ],
+      "trace": "Each amount independently round2(1/3)=.33. Three shares sum .99; leftover .01 is NOT allocated."
+    },
+    {
+      "name": "Bartender hours split",
+      "input": {
+        "entry": {
+          "staff_id": "bar-A",
+          "cash_owed": 80,
+          "credit_tips": 300,
+          "total_sales": 1800
+        },
+        "entryCalc": {
+          "rb_tip": 30,
+          "takehome": 295,
+          "collected_from_servers": 25,
+          "capped": false
+        },
+        "splitMode": "hours",
+        "members": [
+          {
+            "staff_id": "A",
+            "hours_worked": 6
+          },
+          {
+            "staff_id": "B",
+            "hours_worked": 4
+          }
+        ]
+      },
+      "output": [
+        {
+          "staff_id": "A",
+          "hours_worked": 6,
+          "share": 0.6,
+          "cash_owed": 48,
+          "credit_tips": 180,
+          "bar_from_servers": 15,
+          "rb_tip": 18,
+          "takehome": 177
+        },
+        {
+          "staff_id": "B",
+          "hours_worked": 4,
+          "share": 0.4,
+          "cash_owed": 32,
+          "credit_tips": 120,
+          "bar_from_servers": 10,
+          "rb_tip": 12,
+          "takehome": 118
+        }
+      ],
+      "trace": "Shares .6/.4; cash48/32; tips180/120; bar15/10; support18/12; takehome177/118."
+    },
+    {
+      "name": "Hours mode zero hours falls back equal",
+      "input": {
+        "entry": {
+          "staff_id": "bar-A",
+          "cash_owed": 80,
+          "credit_tips": 300,
+          "total_sales": 1800
+        },
+        "entryCalc": {
+          "rb_tip": 30,
+          "takehome": 295,
+          "collected_from_servers": 25,
+          "capped": false
+        },
+        "splitMode": "hours",
+        "members": [
+          {
+            "staff_id": "A",
+            "hours_worked": 0
+          },
+          {
+            "staff_id": "B",
+            "hours_worked": 0
+          }
+        ]
+      },
+      "output": [
+        {
+          "staff_id": "A",
+          "hours_worked": 0,
+          "share": 0.5,
+          "cash_owed": 40,
+          "credit_tips": 150,
+          "bar_from_servers": 12.5,
+          "rb_tip": 15,
+          "takehome": 147.5
+        },
+        {
+          "staff_id": "B",
+          "hours_worked": 0,
+          "share": 0.5,
+          "cash_owed": 40,
+          "credit_tips": 150,
+          "bar_from_servers": 12.5,
+          "rb_tip": 15,
+          "takehome": 147.5
+        }
+      ],
+      "trace": "TotalHours0: each share.5; takehome147.5."
+    },
+    {
+      "name": "Weighted support including hostess",
+      "input": {
+        "rows": [
+          {
+            "staff_id": "runner",
+            "role": "runner",
+            "hours_worked": 6
+          },
+          {
+            "staff_id": "busser",
+            "role": "busser",
+            "hours_worked": 4
+          },
+          {
+            "staff_id": "hostess",
+            "role": "hostess",
+            "hours_worked": 4
+          }
+        ],
+        "poolTotal": 120,
+        "settings": {
+          "bar_tip_pct": 0.05,
+          "runner_busser_tip_pct": 0.2,
+          "bartender_tip_pct": 0.1,
+          "max_tipout_pct": 0.3,
+          "weight_runner": 1,
+          "weight_busser": 1,
+          "weight_bar_back": 1,
+          "weight_hostess": 0.5,
+          "rounding_mode": "none",
+          "rb_basis": "tips"
+        },
+        "splitMode": "weighted"
+      },
+      "output": [
+        {
+          "staff_id": "runner",
+          "payout": 60
+        },
+        {
+          "staff_id": "busser",
+          "payout": 40
+        },
+        {
+          "staff_id": "hostess",
+          "payout": 20
+        }
+      ],
+      "trace": "Weighted units6+4+(.5×4)=12; payouts60,40,20."
+    },
+    {
+      "name": "Shared support ignores hours and role weights",
+      "input": {
+        "rows": [
+          {
+            "staff_id": "runner",
+            "role": "runner",
+            "hours_worked": 6
+          },
+          {
+            "staff_id": "busser",
+            "role": "busser",
+            "hours_worked": 4
+          },
+          {
+            "staff_id": "hostess",
+            "role": "hostess",
+            "hours_worked": 4
+          }
+        ],
+        "poolTotal": 100,
+        "settings": {
+          "bar_tip_pct": 0.05,
+          "runner_busser_tip_pct": 0.2,
+          "bartender_tip_pct": 0.1,
+          "max_tipout_pct": 0.3,
+          "weight_runner": 1,
+          "weight_busser": 1,
+          "weight_bar_back": 1,
+          "weight_hostess": 0.5,
+          "rounding_mode": "none",
+          "rb_basis": "tips"
+        },
+        "splitMode": "shared"
+      },
+      "output": [
+        {
+          "staff_id": "runner",
+          "payout": 33.33
+        },
+        {
+          "staff_id": "busser",
+          "payout": 33.33
+        },
+        {
+          "staff_id": "hostess",
+          "payout": 33.33
+        }
+      ],
+      "trace": "Three payouts33.33; summed99.99; leftover .01 not reconciled."
+    },
+    {
+      "name": "Weighted support all zero hours",
+      "input": {
+        "rows": [
+          {
+            "staff_id": "runner",
+            "role": "runner",
+            "hours_worked": 0
+          },
+          {
+            "staff_id": "busser",
+            "role": "busser",
+            "hours_worked": 0
+          },
+          {
+            "staff_id": "hostess",
+            "role": "hostess",
+            "hours_worked": 0
+          }
+        ],
+        "poolTotal": 120,
+        "settings": {
+          "bar_tip_pct": 0.05,
+          "runner_busser_tip_pct": 0.2,
+          "bartender_tip_pct": 0.1,
+          "max_tipout_pct": 0.3,
+          "weight_runner": 1,
+          "weight_busser": 1,
+          "weight_bar_back": 1,
+          "weight_hostess": 0.5,
+          "rounding_mode": "none",
+          "rb_basis": "tips"
+        }
+      },
+      "output": [
+        {
+          "staff_id": "runner",
+          "payout": 0
+        },
+        {
+          "staff_id": "busser",
+          "payout": 0
+        },
+        {
+          "staff_id": "hostess",
+          "payout": 0
+        }
+      ],
+      "trace": "Unlike server/bar splits: total weighted units0 returns all payouts0; pool120 remains unallocated."
+    },
+    {
+      "name": "Same person server and bartender",
+      "input": {
+        "server": {
+          "staff_id": "server-A",
+          "cash_owed": 45,
+          "credit_tips": 200,
+          "lbw_sales": 500,
+          "total_sales": 1500
+        },
+        "bar": {
+          "staff_id": "server-A",
+          "cash_owed": 80,
+          "credit_tips": 300,
+          "total_sales": 1800
+        },
+        "settings": {
+          "bar_tip_pct": 0.05,
+          "runner_busser_tip_pct": 0.2,
+          "bartender_tip_pct": 0.1,
+          "max_tipout_pct": 0.3,
+          "weight_runner": 1,
+          "weight_busser": 1,
+          "weight_bar_back": 1,
+          "weight_hostess": 0.5,
+          "rounding_mode": "none",
+          "rb_basis": "tips"
+        }
+      },
+      "output": {
+        "server": {
+          "bar_tip": 25,
+          "rb_tip": 35,
+          "takehome": 140,
+          "capped": false
+        },
+        "bartender": {
+          "rb_tip": 30,
+          "takehome": 295,
+          "collected_from_servers": 25,
+          "capped": false
+        },
+        "pool": 65,
+        "combined": {
+          "credit_tips": 500,
+          "bar_from_servers": 25,
+          "rb_tip": 65,
+          "takehome": 435,
+          "total_tips": 525,
+          "takehome_pct": 82.85714285714286,
+          "cash_owed": 125
+        }
+      },
+      "trace": "Server support20% of remaining tips=35; bartender support10% own credit tips=30; pool65. Same staff credit500 + bar received25 = total tips525; combined takehome140+295=435; percentage435/525×100."
+    },
+    {
+      "name": "Missing staff / empty members",
+      "input": {
+        "entry": {
+          "staff_id": null,
+          "cash_owed": 80,
+          "credit_tips": 300,
+          "total_sales": 1800
+        },
+        "entryCalc": {
+          "rb_tip": 30,
+          "takehome": 295,
+          "collected_from_servers": 25,
+          "capped": false
+        },
+        "splitMode": "equal",
+        "members": []
+      },
+      "output": [],
+      "trace": "Empty members falls back single; null staff_id returns []: an entry can feed pools but have no individual payout row."
+    },
+    {
+      "name": "Nonpositive cap means 100%, not disabled cap",
+      "input": {
+        "row": {
+          "staff_id": "server-A",
+          "cash_owed": 45,
+          "credit_tips": 100,
+          "lbw_sales": 3000,
+          "total_sales": 1500
+        },
+        "settings": {
+          "bar_tip_pct": 0.05,
+          "runner_busser_tip_pct": 0.2,
+          "bartender_tip_pct": 0.1,
+          "max_tipout_pct": 0,
+          "weight_runner": 1,
+          "weight_busser": 1,
+          "weight_bar_back": 1,
+          "weight_hostess": 0.5,
+          "rounding_mode": "none",
+          "rb_basis": "tips"
+        }
+      },
+      "output": {
+        "bar_tip": 100,
+        "rb_tip": 0,
+        "takehome": 0,
+        "capped": true
+      },
+      "trace": "max=(cap>0?cap:1)×100=100; raw bar150 support0; capped bar100; takehome0."
+    },
+    {
+      "name": "Rounding and role resolution edge cases",
+      "input": {
+        "values": [
+          1.5,
+          -1.5,
+          1.005
+        ],
+        "modes": [
+          "none",
+          "nearest",
+          "up",
+          "down"
+        ]
+      },
+      "output": {
+        "rounding": [
+          {
+            "n": 1.5,
+            "none": 1.5,
+            "nearest": 2,
+            "up": 2,
+            "down": 1
+          },
+          {
+            "n": -1.5,
+            "none": -1.5,
+            "nearest": -1,
+            "up": -1,
+            "down": -2
+          },
+          {
+            "n": 1.005,
+            "none": 1,
+            "nearest": 1,
+            "up": 2,
+            "down": 1
+          }
+        ],
+        "roles": [
+          "hostess",
+          "busser",
+          "runner"
+        ]
+      },
+      "trace": "Uses JavaScript Math.* with binary floating point: 1.005 rounds to1 not1.01 in none mode; negative nearest tie -1.5→-1. Invalid support positions fall back runner."
+    }
+  ]
+}
