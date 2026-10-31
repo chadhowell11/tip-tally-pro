@@ -60,7 +60,7 @@ The load runs through the same Management API path as the baseline and seed: a s
 | # | Step | Who |
 | --- | --- | --- |
 | 0 | Approve this plan. Answer the open questions below. | Chad |
-| 1 | **Before the migration:** connect an email service to Supabase; upgrade the Supabase plan (see below); logo storage applied (`remote-storage.sh`). | Chad + Claude |
+| 1 | **Before the migration:** connect an email service to Supabase; upgrade the Supabase plan (see below). Logo storage: done. | Chad + Claude |
 | 2 | Take a **rehearsal export** from Lovable and give it to the session. | Chad |
 | 3 | Write the loader and verification scripts, and rehearse on local Postgres. Then rehearse on the new project: load, run every check, then wipe it back to empty. Report the results. | Claude |
 | 4 | Pick a cutover time when nobody enters shifts (after close). Tell managers: no entries in Lovable from that time. | Chad |
@@ -72,7 +72,7 @@ The load runs through the same Management API path as the baseline and seed: a s
 
 - **Email service:** Resend, Postmark or SendGrid, set in Supabase → Authentication → SMTP, with a sender address you control. This is needed for "set your password" emails.
 - **Supabase plan:** free projects pause after a week of inactivity and have no point-in-time backups. Live payroll needs the Pro plan, with backups on.
-- **Logo storage:** `harness/db/remote-storage.sh apply`, then `verify` (built; needs a token to run).
+- **Logo storage:** done 2026-10-31 (`remote-storage.sh apply` + `verify` match production).
 - **Texting:** if Carson's Table sends shift texts, switch to Twilio directly before cutover.
 - **Address:** `tip-tally-pro.onrender.com` or a custom domain. Today staff use `tip-tally-pro.lovable.app`.
 
