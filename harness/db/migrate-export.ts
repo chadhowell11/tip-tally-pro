@@ -13,7 +13,7 @@
 //
 // What moves (Chad, 2026-10-31): one location with everything under it; every login in the export
 // (same ids, same password hashes); open invites are not copied. The operator login (an existing user
-// in the new project) is added to the location as a manager.
+// in the new project) is added to the location as an admin (settings rights; Kevin stays the only owner).
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 
@@ -172,9 +172,10 @@ delete from public.profiles where user_id in (${ids});
 delete from public.user_roles where user_id in (${ids});
 ${staging.filter((s) => s.table.startsWith("public.")).map((s) => `select pg_temp.ttp_move('${s.table}', '${s.name}', true);`).join("\n")}
 
--- The operator (Chad) joins the location as a manager. Not production data; noted in the plan.
+-- The operator (Chad) joins the location as an admin: production's rules let only owners and
+-- admins change settings (logo, pay period). Not production data; noted in the plan.
 insert into public.location_members (location_id, user_id, role)
-select ${lit(loc)}, id, 'manager' from auth.users where lower(email) = lower(${lit(operatorEmail)});
+select ${lit(loc)}, id, 'admin' from auth.users where lower(email) = lower(${lit(operatorEmail)});
 
 select setval('public.app_settings_id_seq', greatest((select max(id) from public.app_settings), 1));
 
