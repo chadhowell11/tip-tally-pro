@@ -108,6 +108,8 @@ After the baseline is in: revoke the access token (supabase.com → Account → 
 
 ## Google sign-in (Supabase's own Google login)
 
+**On hold (Chad, 2026-10-31): the Google button is hidden.** It shows only when Render has `VITE_ENABLE_GOOGLE_SIGNIN=true` at build time. Supabase's Google provider is not enabled. Email and password is the only sign-in.
+
 The app now signs in with Google through Supabase (`supabase.auth.signInWithOAuth`) instead of Lovable's login service. `@lovable.dev/cloud-auth-js` and `src/integrations/lovable/` are gone. Google sends the browser back to `/auth`, which finishes sign-in and routes as before (`/admin` with a location, else `/onboarding`).
 
 Setup (Chad, once):
