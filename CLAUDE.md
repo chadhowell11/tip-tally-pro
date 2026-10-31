@@ -10,7 +10,7 @@ Reports recompute every past shift from raw inputs, so **any change to calculati
 
 ## New environment rules
 - The new Supabase project and local Postgres are the ONLY databases the app or migrations may run against. Never connect to Lovable's production project.
-- Apply `supabase/migrations/` as they are. Changing a migration or the schema is Phase 3 work.
+- **Schema baseline (Chad's decision, 2026-10-31):** the new project is built from the production snapshot `docs/handoff/schema.sql` via `harness/db/remote-baseline.sh`, not by replaying `supabase/migrations/` (those stay as history). Changing the schema itself is Phase 3 work.
 - Until the data migration, the new database holds only scrubbed fixture data (`fixtures/`), never production rows.
 - The production data migration happens once the new environment is ready, as its own planned step: Chad approves the plan first, and the migrated data must reproduce the Lovable payroll CSV export for a recent pay period to the cent.
 - Credentials for the new project live in the environment's secrets, never in the repo.
@@ -22,7 +22,7 @@ Reports recompute every past shift from raw inputs, so **any change to calculati
 4. `harness/reference-pipeline-v1.ts` is a frozen copy of today's behavior. Never "fix" it.
 5. No production data or secrets in the repo. Never create `.env` with production values. Run the app only against local Postgres or the new Supabase project (see New environment rules).
 6. Work on branches and open PRs into `main`. Chad reviews and merges. No force-push to `main`.
-7. Do not change the Supabase schema, RLS, migrations, or the save path in Phases 1–2. Applying the existing migrations unchanged to the new project is allowed.
+7. Do not change the Supabase schema, RLS, migrations, or the save path in Phases 1–2. Applying the production snapshot unchanged to the new project is allowed.
 
 ## Math findings
 Every calculation issue or discrepancy found, however small, gets an ID, a severity and a row in `docs/MATH-FINDINGS.md` in the same PR that finds it. Only Major findings (pay, cash or history wrong at scale) are escalated to Kevin; minor ones are tracked, not escalated.
