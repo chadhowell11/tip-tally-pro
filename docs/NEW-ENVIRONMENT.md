@@ -106,6 +106,22 @@ After the baseline is in: revoke the access token (supabase.com → Account → 
 - **Audit rows:** the audit triggers log the seed itself (the settings update and every inserted override) with no user attached. The seed deletes those rows in the same transaction, so the audit panel shows only real edits.
 - **Tested locally** (PG17 + snapshot): `seed` then `check` gives 210 of 210 shifts and 240 of 240 period-total values matching, credit tips $66,220.83. Negative control: changing one server's credit tips by $0.01 makes `check` fail on that shift and on S09's period credit tips. `reset` leaves 0 rows. `npm test`: 212 of 212.
 
+## Google sign-in (Supabase's own Google login)
+
+The app now signs in with Google through Supabase (`supabase.auth.signInWithOAuth`) instead of Lovable's login service. `@lovable.dev/cloud-auth-js` and `src/integrations/lovable/` are gone. Google sends the browser back to `/auth`, which finishes sign-in and routes as before (`/admin` with a location, else `/onboarding`).
+
+Setup (Chad, once):
+1. **Google Cloud Console → APIs & Services → OAuth consent screen:** External, app name "Tip Share", your support email. While it is in "Testing", add the Google accounts that may sign in as test users, or publish it.
+2. **Credentials → Create credentials → OAuth client ID → Web application.**
+   - Authorized JavaScript origins: `https://tip-tally-pro.onrender.com`
+   - Authorized redirect URIs: `https://mmutdqklchnftziikqpq.supabase.co/auth/v1/callback`
+3. **Supabase → Authentication → Sign In / Providers → Google:** enable, paste the client ID and client secret, save.
+4. **Supabase → Authentication → URL Configuration → Redirect URLs:** add `https://tip-tally-pro.onrender.com/auth`.
+
+The setup needs no Render change; the code change deploys when the PR merges.
+
+Behavior to know: a Google account with the same verified email as an existing user (e.g. `chadhowell11@gmail.com`) signs in as that same user and keeps its location. Any other Google account becomes a new user with no location and lands on onboarding.
+
 ## Render
 
 Set these on the existing Render web service (Settings). No `render.yaml`, so no second service gets created.
@@ -123,7 +139,7 @@ Set these on the existing Render web service (Settings). No `render.yaml`, so no
 
 Environment variables on Render: `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY` (both are built into the app, so set them before the first build), `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SERVICE_ROLE_KEY` (secret), `NODE_VERSION=22`.
 
-Deploy only after the baseline is applied. Until Google sign-in is rewired, use email and password sign-in.
+Deploy only after the baseline is applied. Google sign-in works once the setup in "Google sign-in" is done.
 
 ## Handoff: next steps, in order
 
@@ -132,4 +148,4 @@ Deploy only after the baseline is applied. Until Google sign-in is rewired, use 
 2. ~~`harness/db/remote-baseline.sh apply`, then `verify`. Report any catalog diff before going further.~~ Done, no diff.
 3. ~~Chad adds a test login (Authentication → Users → Add user). Then `harness/db/remote-seed.sh seed <that email>` and `harness/db/remote-seed.sh check`.~~ Done, all match.
 4. Tell Chad to deploy on Render, then smoke-test sign-in and the payroll screen.
-5. Then replace the Lovable-only pieces, one PR each: Google sign-in (Supabase OAuth), Twilio direct, error reporting.
+5. Then replace the Lovable-only pieces, one PR each: ~~Google sign-in (Supabase OAuth)~~ (done in code; setup in "Google sign-in"), Twilio direct, error reporting.
