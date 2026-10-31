@@ -1,6 +1,21 @@
 # New environment: Supabase + Render
 
-**Status (2026-10-31):** Supabase project and Render service created by Chad. Schema baseline decided: production snapshot. Node build for Render ready and tested. Next: apply the baseline to the hosted project (see "Handoff"). Scope and rules are in `CLAUDE.md` ("New environment rules").
+**Status (2026-10-31, later):** Baseline applied and verified; fixtures seeded and the payroll math on them checked. Next: merge PR #1 and this PR, then deploy on Render and smoke-test (step 4 under "Handoff"). Scope and rules are in `CLAUDE.md` ("New environment rules").
+
+## Hosted project baseline (done 2026-10-31)
+
+- Chad confirmed `mmutdqklchnftziikqpq` is the new project. `SUPABASE_PROJECT_REF` holds the project URL; the scripts accept that form.
+- `check`: name `Tip-Tally-Pro`, `us-east-1`, `ACTIVE_HEALTHY`, PostgreSQL 17.11, 0 tables in `public`.
+- `apply`: `docs/handoff/schema.sql` applied in one transaction; 17 tables in `public`, including `tip_override_audit`.
+- `verify`: "catalog matches the production snapshot". No differences, including grants.
+- After apply: 0 users in `auth.users`, 0 locations.
+
+## Hosted fixture seed (done 2026-10-31)
+
+- Owner login: the one user Chad created (confirmed, app admin via `handle_new_user_admin`).
+- `remote-seed.sh seed`: 1 location (owner membership), 24 staff, 210 shifts (2026-06-30 to 2026-10-30), 370 server entries, 202 bartender entries, 146 support rows. Audit tables: 0 rows.
+- `remote-seed.sh check`: 210 of 210 shifts equal `expected_v1.json`; 240 of 240 period-total values match to the cent; credit tips $66,220.83, take-home $65,883.01.
+- Fix found on the first run: the seed SQL was too large for a curl argument, so `mgmt-api.sh` now sends the request body from a file. Nothing was written by the failed attempt.
 
 ## Local migration test
 
@@ -66,6 +81,8 @@ Direct Postgres connections (ports 5432 and 6543) are blocked from Claude's clou
 | `apply` | Applies `docs/handoff/schema.sql` in one transaction. Refuses if `public` already has tables. |
 | `verify` | Compares the project's catalog with `harness/db/expected-catalog.json` |
 
+All three commands also run against a local Postgres with `TTP_LOCAL_PG_PORT=<port>` (except `check`, which needs the API). Locally on `supabase/postgres:17.4.1.020`, `apply` of the snapshot followed by `verify` gives "catalog matches the production snapshot".
+
 `expected-catalog.json` is the fingerprint (`harness/db/catalog-fingerprint.sql`) of the snapshot applied to local Supabase Postgres 17: 17 tables, 161 columns, 5 enums, 14 functions, 38 policies, 45 indexes, 13 triggers, 357 grants. A hosted project may differ from local in default grants. Investigate any diff; don't edit the expected file to match.
 
 Session setup (done by Chad in the CH-HUB environment):
@@ -73,6 +90,21 @@ Session setup (done by Chad in the CH-HUB environment):
 - **Environment variable:** `SUPABASE_PROJECT_REF=<project ref>`
 
 After the baseline is in: revoke the access token (supabase.com → Account → Access Tokens).
+
+## Seeding the fixtures
+
+`harness/db/remote-seed.sh` (SQL from `harness/db/seed-fixtures.ts`), same Management API path:
+
+| Command | What it does |
+| --- | --- |
+| `seed <owner-email>` | One transaction: one test location "TEST: scrubbed fixtures (not real payroll)", its settings from `fixtures/inputs.json`, staff S01–S24 (named "Staff S01" …), the 210 shifts with all entries, members and overrides. Refuses if any location already exists or if the owner email isn't a user yet. |
+| `check` | Reads the rows back in the shape of the payroll screen's select (`reports.tsx`), runs the engine exactly as that screen does, and compares with `fixtures/expected_v1.json`: every shift deep-equal, and period totals per staff to the cent. |
+| `reset` | Deletes the test location and everything under it. |
+
+- **Owner:** the seed attaches the location to an existing login, so create one first: Supabase dashboard → Authentication → Users → Add user (email + password, auto-confirm). Use a test address, not a staff member's.
+- **Row ids** are derived from fixture keys, so the seed is reproducible and `check` maps database ids back to S01–S24.
+- **Audit rows:** the audit triggers log the seed itself (the settings update and every inserted override) with no user attached. The seed deletes those rows in the same transaction, so the audit panel shows only real edits.
+- **Tested locally** (PG17 + snapshot): `seed` then `check` gives 210 of 210 shifts and 240 of 240 period-total values matching, credit tips $66,220.83. Negative control: changing one server's credit tips by $0.01 makes `check` fail on that shift and on S09's period credit tips. `reset` leaves 0 rows. `npm test`: 212 of 212.
 
 ## Render
 
@@ -95,8 +127,9 @@ Deploy only after the baseline is applied. Until Google sign-in is rewired, use 
 
 ## Handoff: next steps, in order
 
-1. `harness/db/remote-baseline.sh check`: confirm the ref, PG17, and 0 tables in `public`. Stop and report if any of that is wrong.
-2. `harness/db/remote-baseline.sh apply`, then `verify`. Report any catalog diff before going further.
-3. Write a seed script that loads ONLY the scrubbed fixtures (`fixtures/inputs.json`) into the new project through the same API: one test location, its settings, S01–S24 staff, the 210 shifts. No production rows. Then check that the payroll report's math on that data equals `fixtures/expected_v1.json`.
+0. ~~Chad confirms the project ref.~~ Done.
+1. ~~`harness/db/remote-baseline.sh check`: confirm the ref, PG17, and 0 tables in `public`. Stop and report if any of that is wrong.~~ Done.
+2. ~~`harness/db/remote-baseline.sh apply`, then `verify`. Report any catalog diff before going further.~~ Done, no diff.
+3. ~~Chad adds a test login (Authentication → Users → Add user). Then `harness/db/remote-seed.sh seed <that email>` and `harness/db/remote-seed.sh check`.~~ Done, all match.
 4. Tell Chad to deploy on Render, then smoke-test sign-in and the payroll screen.
 5. Then replace the Lovable-only pieces, one PR each: Google sign-in (Supabase OAuth), Twilio direct, error reporting.
