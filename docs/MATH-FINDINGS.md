@@ -16,6 +16,15 @@ Every calculation issue or discrepancy found in Tip Tally Pro, with its effect o
 | 4 | F-01 | Individual report omits bartender cash ($14,658.59) | No; fix to match payroll |
 | 5 | F-10 | `total_sales` never loaded; sales basis would zero the pool | No; fix to match payroll |
 
+## Chad's direction (2026-10-31, pending Kevin's sign-off)
+
+Chad's direction for the Major items, sent to Kevin for review. It is not a decision until Kevin's sign-off is recorded in the "Decision / date" column of each row.
+
+1. **Fix all five Major items** (Kevin's #1–5: P-05/P-07, P-01, F-04/F-03, F-01, F-10) once the new system is running.
+2. **Forward only.** Past payroll is booked; no calculation change may alter past numbers. So P-05 (lock booked history, or version settings and math by date) comes first. Until it exists, every calculation change would still rewrite past reports and cannot ship.
+3. **Tip-out goes only to staff who were on the shift** (P-01). The exact rule for a shift with no support staff (no tip-out taken, or another rule) is part of Kevin's sign-off.
+4. **Every change is documented** with its dollar impact, a fixture that fails before and passes after, and Kevin's review and sign-off before it goes live (CLAUDE.md rule 1).
+
 Status values: `Awaiting Kevin` · `To fix` · `Tracked` (minor, not escalated) · `Fixed` (with the PR that fixed it).
 
 ## F: screens that disagree with payroll
@@ -53,6 +62,7 @@ These are v1 payroll behavior, locked by `fixtures/expected_v1.json`. Changing a
 
 | Date | Change |
 | --- | --- |
+| 2026-10-31 | Chad's direction recorded: fix all five Major items, forward only (P-05 first), tip-out only to staff on the shift, each change documented for Kevin's sign-off. Pending Kevin. |
 | 2026-10-31 | P-07 added from the local migration test (Aug 18 role backfill rewrote pre-Aug-18 history). |
 | 2026-10-31 | Severity added. Only Major items go to Kevin (Chad's direction); the five Major items are summarized in Kevin's doc. |
 | 2026-10-31 | Register created from Phase 1 characterization: F-01–F-10, P-01–P-06. |
