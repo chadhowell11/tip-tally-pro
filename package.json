@@ -7,10 +7,18 @@
     "dev": "vite dev",
     "build": "vite build",
     "build:dev": "vite build --mode development",
+    "build:render": "NITRO_PRESET=node-server vite build",
+    "start": "node .output/server/index.mjs",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "test": "node --experimental-strip-types --test harness/golden.test.ts"
+    "test": "node --experimental-strip-types --test harness/golden.test.ts",
+    "test:synthetic": "node --experimental-strip-types --test harness/synthetic.test.ts",
+    "gen:synthetic": "node --experimental-strip-types harness/gen-synthetic.ts",
+    "test:characterize": "node --experimental-strip-types --import ./harness/register-alias.mjs --test harness/characterize.test.ts",
+    "gen:characterization": "node --experimental-strip-types --import ./harness/register-alias.mjs harness/gen-characterization.ts",
+    "test:all": "npm test && npm run test:synthetic && npm run test:engine && npm run test:characterize",
+    "test:engine": "node --experimental-strip-types --test harness/engine.test.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

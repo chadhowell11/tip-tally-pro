@@ -36,5 +36,11 @@ export default tseslint.config(
       "@typescript-eslint/no-unused-vars": "off",
     },
   },
+  {
+    // Test and characterization harness: runs in Node and mirrors untyped Supabase rows, so `any` is allowed.
+    files: ["harness/**/*.ts"],
+    languageOptions: { globals: globals.node },
+    rules: { "@typescript-eslint/no-explicit-any": "off" },
+  },
   eslintPluginPrettier,
 );

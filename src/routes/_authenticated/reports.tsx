@@ -6,18 +6,11 @@ import { downloadTextFile } from "@/lib/download";
 import { type PayPeriodType, payPeriodRange, previousPayPeriod } from "@/lib/location";
 import { useBrand } from "@/lib/brand";
 import {
-  calcServer,
-  calcBartender,
-  calcSupportPool,
-  poolFromShift,
-  round2,
-  splitBartenderShares,
-  splitServerShares,
+  payrollDayRowsByStaff,
+  payrollTotalsByStaff,
   type BartenderSplitMode,
   type Settings,
-  type SupportRole,
-  resolveSupportRole,
-} from "@/lib/calculations";
+} from "@/engine";
 
 
 export const Route = createFileRoute("/_authenticated/reports")({
@@ -205,141 +198,19 @@ function ReportsPage() {
 
   const staffById = useMemo(() => new Map(staff.map((s) => [s.id, s])), [staff]);
 
+  // Payroll math runs in the engine (src/engine). This screen only formats and sums its output.
+  const staffRole = useMemo(() => new Map(staff.map((s) => [s.id, s.role])), [staff]);
+
   const totalsByStaff = useMemo(() => {
-    const map = new Map<string, Totals>();
-    if (!settings) return map;
-    const bump = (id: string, patch: Partial<Totals>) => {
-      const t = map.get(id) ?? empty();
-      for (const k in patch) (t as any)[k] += (patch as any)[k] ?? 0;
-      map.set(id, t);
-    };
-    for (const sh of shifts) {
-      const shiftStaffSeen = new Set<string>();
-      for (const sv of sh.shift_servers) {
-        const c = calcServer(sv, settings);
-        const shares = splitServerShares(
-          sv,
-          { bar_tip: c.bar_tip, rb_tip: c.rb_tip, takehome: c.takehome },
-          sv.split_mode ?? "single",
-          sv.shift_server_members ?? [],
-        );
-        for (const share of shares) {
-          bump(share.staff_id, {
-            cash_owed: share.cash_owed, credit_tips: share.credit_tips, lbw_sales: share.lbw_sales,
-            bar_tip_out: share.bar_tip, rb_tip_out: share.rb_tip, takehome: share.takehome,
-          });
-          shiftStaffSeen.add(share.staff_id);
-        }
-      }
-      // bartenders: collect server bar tips
-      const serverBarTotal = sh.shift_servers.reduce((s, sv) => s + calcServer(sv, settings).bar_tip, 0);
-      const bartenderCount = Math.max(sh.shift_bartenders.length, 1);
-      for (const bt of sh.shift_bartenders) {
-        const collected = round2(serverBarTotal / bartenderCount);
-        const c = calcBartender(bt, collected, settings);
-        const shares = splitBartenderShares(
-          bt,
-          { rb_tip: c.rb_tip, takehome: c.takehome, collected_from_servers: collected },
-          bt.split_mode ?? "single",
-          bt.shift_bartender_members ?? [],
-        );
-        for (const share of shares) {
-          bump(share.staff_id, {
-            cash_owed: share.cash_owed,
-            credit_tips: share.credit_tips,
-            bar_from_servers: share.bar_from_servers,
-            rb_tip_out: share.rb_tip,
-            takehome: share.takehome,
-          });
-          shiftStaffSeen.add(share.staff_id);
-        }
-
-      }
-
-
-      // support pool
-      const pool = poolFromShift(sh.shift_servers, sh.shift_bartenders, settings);
-      const supportRows = sh.shift_support.map((sp) => ({
-        staff_id: sp.staff_id,
-        role: resolveSupportRole(sp.role, staffById.get(sp.staff_id)?.role),
-        hours_worked: sp.hours_worked,
-      }));
-      const payouts = calcSupportPool(supportRows, pool, settings, (sh.support_split_mode === "shared" ? "shared" : "weighted"));
-      for (const sp of sh.shift_support) {
-        const payout = payouts.find((p) => p.staff_id === sp.staff_id)?.payout ?? 0;
-        bump(sp.staff_id, { hours: sp.hours_worked, rb_received: payout, takehome: payout });
-        shiftStaffSeen.add(sp.staff_id);
-      }
-      for (const id of shiftStaffSeen) bump(id, { shifts: 1 });
-    }
-    return map;
-  }, [shifts, settings, staffById]);
+    if (!settings) return new Map<string, Totals>();
+    return payrollTotalsByStaff(shifts, settings, staffRole);
+  }, [shifts, settings, staffRole]);
 
   /** Per-person, per-day (and period) breakdown used by the individual print sheets. */
   const dayRowsByStaff = useMemo(() => {
-    const out = new Map<string, { date: string; period: string; totals: Totals }[]>();
-    if (!settings) return out;
-    for (const sh of shifts) {
-      const perStaff = new Map<string, Totals>();
-      const bump = (id: string, patch: Partial<Totals>) => {
-        const t = perStaff.get(id) ?? empty();
-        for (const k in patch) (t as any)[k] += (patch as any)[k] ?? 0;
-        perStaff.set(id, t);
-      };
-      for (const sv of sh.shift_servers) {
-        const c = calcServer(sv, settings);
-        const shares = splitServerShares(
-          sv,
-          { bar_tip: c.bar_tip, rb_tip: c.rb_tip, takehome: c.takehome },
-          sv.split_mode ?? "single",
-          sv.shift_server_members ?? [],
-        );
-        for (const share of shares) {
-          bump(share.staff_id, {
-            cash_owed: share.cash_owed, credit_tips: share.credit_tips, lbw_sales: share.lbw_sales,
-            bar_tip_out: share.bar_tip, rb_tip_out: share.rb_tip, takehome: share.takehome,
-          });
-        }
-      }
-      const serverBarTotal = sh.shift_servers.reduce((s, sv) => s + calcServer(sv, settings).bar_tip, 0);
-      const bartenderCount = Math.max(sh.shift_bartenders.length, 1);
-      for (const bt of sh.shift_bartenders) {
-        const collected = round2(serverBarTotal / bartenderCount);
-        const c = calcBartender(bt, collected, settings);
-        const shares = splitBartenderShares(
-          bt,
-          { rb_tip: c.rb_tip, takehome: c.takehome, collected_from_servers: collected },
-          bt.split_mode ?? "single",
-          bt.shift_bartender_members ?? [],
-        );
-        for (const share of shares) {
-          bump(share.staff_id, {
-            cash_owed: share.cash_owed, credit_tips: share.credit_tips,
-            bar_from_servers: share.bar_from_servers, rb_tip_out: share.rb_tip, takehome: share.takehome,
-          });
-        }
-      }
-      const pool = poolFromShift(sh.shift_servers, sh.shift_bartenders, settings);
-      const supportRows = sh.shift_support.map((sp) => ({
-        staff_id: sp.staff_id,
-        role: resolveSupportRole(sp.role, staffById.get(sp.staff_id)?.role),
-        hours_worked: sp.hours_worked,
-      }));
-      const payouts = calcSupportPool(supportRows, pool, settings, (sh.support_split_mode === "shared" ? "shared" : "weighted"));
-      for (const sp of sh.shift_support) {
-        const payout = payouts.find((p) => p.staff_id === sp.staff_id)?.payout ?? 0;
-        bump(sp.staff_id, { hours: sp.hours_worked, rb_received: payout, takehome: payout });
-      }
-      for (const [id, t] of perStaff) {
-        t.shifts = 1;
-        (out.get(id) ?? out.set(id, []).get(id)!).push({ date: sh.shift_date, period: sh.period, totals: t });
-      }
-    }
-    for (const list of out.values()) {
-      list.sort((a, b) => (a.date === b.date ? a.period.localeCompare(b.period) : a.date.localeCompare(b.date)));
-    }
-    return out;
-  }, [shifts, settings, staffById]);
+    if (!settings) return new Map<string, { date: string; period: string; totals: Totals }[]>();
+    return payrollDayRowsByStaff(shifts, settings, staffRole);
+  }, [shifts, settings, staffRole]);
 
   const rows = useMemo(() => {
     return Array.from(totalsByStaff.entries())
