@@ -10,7 +10,7 @@ Every calculation issue or discrepancy found in Tip Tally Pro, with its effect o
 
 | Kevin's # | Register IDs | Issue | Needs Kevin's input? |
 | --- | --- | --- | --- |
-| 1 | P-05 | Changing a setting rewrites past payroll | Yes |
+| 1 | P-05, P-07 | Changing a setting rewrites past payroll; it already happened once on Aug 18 | Yes |
 | 2 | P-01 | Support tip-out taken with no one to receive it ($318) | Yes |
 | 3 | F-04, F-03 | Texts and Trends split support by usual role ($297 texted wrong) | No; fix to match payroll |
 | 4 | F-01 | Individual report omits bartender cash ($14,658.59) | No; fix to match payroll |
@@ -47,10 +47,12 @@ These are v1 payroll behavior, locked by `fixtures/expected_v1.json`. Changing a
 | P-04 | Minor | Overrides are applied after the cap, so they can exceed 30% | 5 server entries | `2026-07-08-PM` S03: $15 card tips, $12 tipped out | Tracked | |
 | P-05 | Major | Every report recomputes past shifts with current settings; no settings history | Any settings change rewrites all past reports | n/a | Awaiting Kevin | |
 | P-06 | Minor | Duplicate support staff ID on one shift: `payouts.find` repeats the first payout and drops the second | $0 (no duplicates) | `SYN-dup-support`: pool $56, $47 paid | Tracked | |
+| P-07 | Major | On 2026-08-18 migrations `20260818042409` + `20260818042505` added `shift_support.role` and backfilled every existing row from the person's first support position (else runner). Roles for shifts before that date were inferred, not recorded, and today's reports weight those shifts by the backfilled role | Estimated $252 of take-home moved among 4 people across 7 of the 83 pre-Aug-18 shifts, IF the pre-Aug-18 code weighted by primary role (that code is not in the export). Confirm with a pre-Aug-18 payroll export. | `2026-07-17-PM` S05: $64 today, $43 by primary role (same as F-04's texted amount) | Awaiting Kevin | |
 
 ## Log
 
 | Date | Change |
 | --- | --- |
+| 2026-10-31 | P-07 added from the local migration test (Aug 18 role backfill rewrote pre-Aug-18 history). |
 | 2026-10-31 | Severity added. Only Major items go to Kevin (Chad's direction); the five Major items are summarized in Kevin's doc. |
 | 2026-10-31 | Register created from Phase 1 characterization: F-01–F-10, P-01–P-06. |
