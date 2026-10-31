@@ -1,6 +1,6 @@
 # New environment: Supabase + Render
 
-**Status (2026-10-31, evening):** Baseline applied and verified; fixtures seeded and checked; app live on Render (`https://tip-tally-pro.onrender.com`) with the smoke test passed; logo storage applied and verified. Next: Chad revokes the access token and checks a logo upload in the app; the data migration waits for Chad's answers and written approval (`docs/DATA-MIGRATION-PLAN.md`). Scope and rules are in `CLAUDE.md` ("New environment rules").
+**Status (2026-10-31, evening):** Baseline applied and verified; fixtures seeded and checked; app live on Render (`https://tip-tally-pro.onrender.com`) with the smoke test passed; logo storage applied and verified. Chad revoked the access token and confirmed an uploaded logo shows on the payroll report and its print view. Next: the data migration waits for Chad's answers and written approval (`docs/DATA-MIGRATION-PLAN.md`). Scope and rules are in `CLAUDE.md` ("New environment rules").
 
 ## Hosted project baseline (done 2026-10-31)
 
@@ -105,7 +105,7 @@ The schema snapshot covers `public` only, so production's logo storage is added 
   - Re-checks first: `remote-baseline.sh check` gave `Tip-Tally-Pro`, `us-east-1`, `ACTIVE_HEALTHY`, PostgreSQL 17.11, 17 tables in `public`; `remote-baseline.sh verify` still "catalog matches the production snapshot"; `remote-seed.sh check` still 210 of 210 shifts, 240 of 240 period-total values, credit tips $66,220.83, take-home $65,883.01.
   - `verify` before `apply`: no buckets and no `storage.objects` policies (a clean project).
   - `apply`: succeeded. `verify`: "logo storage matches production", no differences. A second `apply` is refused ("storage bucket logos already exists"), and `remote-baseline.sh verify` still matches afterwards.
-  - Still to check in the app (Chad): Admin → upload a logo, then confirm it shows on the payroll report and its print view. The app stores the file at `<location id>/…` and shows it through a signed URL, so the bucket stays private as in production.
+  - Checked in the app (Chad, 2026-10-31): a logo uploaded in Admin shows on the payroll report and its print view. The app stores the file at `<location id>/…` and shows it through a signed URL, so the bucket stays private as in production.
 
 ## Seeding the fixtures
 
@@ -166,6 +166,6 @@ Deploy only after the baseline is applied. Google sign-in works once the setup i
 2. ~~`harness/db/remote-baseline.sh apply`, then `verify`. Report any catalog diff before going further.~~ Done, no diff.
 3. ~~Chad adds a test login (Authentication → Users → Add user). Then `harness/db/remote-seed.sh seed <that email>` and `harness/db/remote-seed.sh check`.~~ Done, all match.
 4. ~~Tell Chad to deploy on Render, then smoke-test sign-in and the payroll screen.~~ Done, smoke test passed.
-5. ~~Logo storage: `harness/db/remote-storage.sh apply`, then `verify`.~~ Done, matches production. Then Chad revokes the access token and checks a logo upload in the app (Admin → logo → payroll report and print).
+5. ~~Logo storage: `harness/db/remote-storage.sh apply`, then `verify`.~~ Done, matches production. Chad revoked the access token and confirmed the logo on the payroll report and print.
 6. Production data migration: `docs/DATA-MIGRATION-PLAN.md` (draft, waiting for Chad's approval).
 7. Then replace the Lovable-only pieces, one PR each: ~~Google sign-in (Supabase OAuth)~~ (done in code; setup in "Google sign-in"), Twilio direct, error reporting.
