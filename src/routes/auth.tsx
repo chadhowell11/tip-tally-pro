@@ -1,8 +1,10 @@
 import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { lovable } from "@/integrations/lovable";
 import { REMEMBER_KEY, REMEMBER_PW_KEY, clearRemembered } from "@/lib/remember";
+
+// Set before leaving for Google; tells the page it is a return from Google sign-in.
+const OAUTH_PENDING_KEY = "ttp-oauth-pending";
 
 export const Route = createFileRoute("/auth")({
   ssr: false,
@@ -38,7 +40,23 @@ function AuthPage() {
 
   useEffect(() => {
     (async () => {
+      // Google sends errors back in the query string or the hash.
+      const params = new URLSearchParams(
+        window.location.search + "&" + window.location.hash.slice(1),
+      );
+      const oauthError = params.get("error_description") ?? params.get("error");
+      // getSession waits for supabase-js to read a returned Google session from the URL.
       const { data } = await supabase.auth.getSession();
+      const returningFromGoogle = sessionStorage.getItem(OAUTH_PENDING_KEY) === "1";
+      sessionStorage.removeItem(OAUTH_PENDING_KEY);
+      if (oauthError) {
+        setErr(oauthError);
+        return;
+      }
+      if (returningFromGoogle && data.session) {
+        routePostAuth();
+        return;
+      }
       if (data.session?.user?.email) setSignedInEmail(data.session.user.email);
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -85,12 +103,16 @@ function AuthPage() {
 
   async function signInGoogle() {
     setErr(null);
-    const result = await lovable.auth.signInWithOAuth("google", {
-      redirect_uri: window.location.origin,
+    // Supabase's own Google login: the browser goes to Google, then back to /auth with a session.
+    sessionStorage.setItem(OAUTH_PENDING_KEY, "1");
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: { redirectTo: `${window.location.origin}/auth` },
     });
-    if (result.error) return setErr(result.error.message ?? "Google sign-in failed");
-    if (result.redirected) return;
-    routePostAuth();
+    if (error) {
+      sessionStorage.removeItem(OAUTH_PENDING_KEY);
+      setErr(error.message || "Google sign-in failed");
+    }
   }
 
   return (
