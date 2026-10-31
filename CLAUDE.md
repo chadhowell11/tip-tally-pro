@@ -21,7 +21,7 @@ Reports recompute every past shift from raw inputs, so **any change to calculati
 3. Never edit `fixtures/expected_v1.json`. If parity fails, the code is wrong. An approved variance goes in `fixtures/approved_variances.json` with its dollar impact.
 4. `harness/reference-pipeline-v1.ts` is a frozen copy of today's behavior. Never "fix" it.
 5. No production data or secrets in the repo. Never create `.env` with production values. Run the app only against local Postgres or the new Supabase project (see New environment rules).
-6. Work on branches and open PRs into `main`. Chad reviews and merges. No force-push to `main`.
+6. Work on branches and open PRs into `main`. **Merge each PR into `main` yourself once its checks pass** (Chad, 2026-10-31), unless Chad asks you not to for that change. This does not replace rule 1: a change to calculation output still needs Chad's written sign-off (and Kevin's decision for a Major finding) before it is merged. No force-push to `main`.
 7. Do not change the Supabase schema, RLS, migrations, or the save path in Phases 1–2. Applying the production snapshot unchanged to the new project is allowed.
 
 ## Math findings
