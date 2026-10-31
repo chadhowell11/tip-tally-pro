@@ -1,6 +1,50 @@
 # Production data migration plan (Lovable → new Supabase project)
 
-**Status: DRAFT for Chad's approval (2026-10-31).** Nothing in this plan runs until Chad approves it in writing (CLAUDE.md, "New environment rules"). Lovable stays live, and Carson's Table keeps using it until cutover.
+**Status: APPROVED (Chad, 2026-10-31: "proceed with data import"), with the decisions below. Rehearsed locally; the hosted load is next.** Lovable stays live until go-live.
+
+## Chad's decisions (2026-10-31)
+
+| Question | Decision |
+| --- | --- |
+| Export | Lovable database backup `tip-tally-pro_261031-DatabaseBK.backup` (pg_dump custom format, taken 2026-10-31 12:36 UTC from PostgreSQL 17.6). It is the export for the load: "current for now". Kept only in the session's scratch folder, never the repo. |
+| Locations | Only Carson's Table. The export also has a second location, "Kevin's" (created 07-30, settings and a logo, no staff or shifts); it is **left behind**. |
+| Logins | All three production logins (same ids), plus Chad's login, which joins Carson's Table as a **manager**. Production roles are copied as they are (two admins). |
+| Passwords | **Carried over:** the export holds the password hashes, so everyone keeps their current password and no "set your password" emails are needed for the switch. |
+| Texting | Not set up; on hold. |
+| Address | Keep `tip-tally-pro.onrender.com`. |
+| Cutover | Load the current backup now. |
+
+### What the export showed
+- All 210 shifts match `fixtures/inputs.json` input for input (tips, cash, sales, overrides, split modes, support hours). Production staff ids sorted ascending are S01–S24, which lets the check compare the migrated payroll directly with `expected_v1.json`.
+- Raw credit tips $66,220.80 (as in the fixtures). The $66,220.83 printed by the checks is the engine's allocated total, a different number.
+- 4,404 override-history rows, 1 settings-history row, 0 texts, 2 expired invites (not copied).
+- Logo images are not in a database dump (only their storage records). After the load, re-upload the Carson's Table logo in Admin.
+- Not copied: sessions and tokens, `vault.secrets`, Lovable's export bucket, the other location.
+
+## The loader: `harness/db/remote-migrate.sh`
+
+| Command | What it does |
+| --- | --- |
+| `inspect <backup>` | Locations, login count and row counts in the export |
+| `load <backup> <location-id> <operator-email>` | One transaction. Refuses if any location exists or any export login (id or email) exists. Copies the location and everything under it plus all logins, same ids and every column; pauses app triggers on the public tables and turns them back on before commit; replaces the profile and role rows the `auth.users` triggers create with the exported ones; adds the operator as manager; sets `app_settings_id_seq`; checks every row count before committing. |
+| `check <backup> <location-id> <operator-email>` | Row counts and checksums per table against the export, then the payroll engine on the migrated rows against `fixtures/expected_v1.json` (per shift and period totals to the cent) |
+| `wipe <backup> <location-id>` | Removes the migrated location and logins (no-go or redo) |
+
+The backup is unpacked with PostgreSQL 17's `pg_restore` into a private temp folder that is deleted on exit. The generator is `harness/db/migrate-export.ts`.
+
+### Local rehearsal (2026-10-31)
+On `supabase/postgres:17.4.1.020` + snapshot + logo storage + an operator login + seeded fixtures, i.e. the hosted project's state:
+- `load` while the fixtures are present: refused. After `remote-seed.sh reset`: loaded.
+- `check`: every table matches the export (19 tables incl. `auth.users`, `auth.identities`); 210 of 210 shifts and 240 of 240 period totals equal `expected_v1.json`; credit tips $66,220.83, take-home $65,883.01.
+- `remote-baseline.sh verify` and `remote-storage.sh verify` still match (triggers back on).
+- Negative control: one server's credit tips +$0.01 makes `check` fail on `shift_servers`.
+- `wipe` leaves 0 locations, staff and audit rows and only the operator login; a second `load` + `check` pass again.
+
+### Hosted steps
+1. `harness/db/remote-seed.sh reset` (removes the fixture location; Chad's login stays).
+2. `harness/db/remote-migrate.sh load <backup> <Carson's Table location id> chadhowell11@gmail.com`
+3. `harness/db/remote-migrate.sh check …`, `remote-baseline.sh verify`, `remote-storage.sh verify`.
+4. Chad: sign in, re-upload the logo in Admin, download the payroll CSV for a recent pay period from both Lovable and the new app; Claude diffs them (must match to the cent). Then go/no-go.
 
 ## Goal and acceptance test
 
