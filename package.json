@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "test": "node --experimental-strip-types --test harness/golden.test.ts"
+    "test": "node --experimental-strip-types --test harness/golden.test.ts",
+    "test:synthetic": "node --experimental-strip-types --test harness/synthetic.test.ts",
+    "gen:synthetic": "node --experimental-strip-types harness/gen-synthetic.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
