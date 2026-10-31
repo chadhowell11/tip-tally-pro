@@ -8,7 +8,7 @@
 | --- | --- |
 | Export | Lovable database backup `tip-tally-pro_261031-DatabaseBK.backup` (pg_dump custom format, taken 2026-10-31 12:36 UTC from PostgreSQL 17.6). It is the export for the load: "current for now". Kept only in the session's scratch folder, never the repo. |
 | Locations | Only Carson's Table. The export also has a second location, "Kevin's" (created 07-30, settings and a logo, no staff or shifts); it is **left behind**. |
-| Logins | All three production logins (same ids), plus Chad's login, which joins Carson's Table as a **manager**. Production roles are copied as they are (two admins). |
+| Logins | All three production logins (same ids), plus Chad's login, which joins Carson's Table as an **admin** (changed from manager on 2026-10-31, see below). Production roles are copied as they are (two admins). |
 | Passwords | **Carried over:** the export holds the password hashes, so everyone keeps their current password and no "set your password" emails are needed for the switch. |
 | Texting | Not set up; on hold. |
 | Address | Keep `tip-tally-pro.onrender.com`. |
@@ -26,7 +26,7 @@
 | Command | What it does |
 | --- | --- |
 | `inspect <backup>` | Locations, login count and row counts in the export |
-| `load <backup> <location-id> <operator-email>` | One transaction. Refuses if any location exists or any export login (id or email) exists. Copies the location and everything under it plus all logins, same ids and every column; pauses app triggers on the public tables and turns them back on before commit; replaces the profile and role rows the `auth.users` triggers create with the exported ones; adds the operator as manager; sets `app_settings_id_seq`; checks every row count before committing. |
+| `load <backup> <location-id> <operator-email>` | One transaction. Refuses if any location exists or any export login (id or email) exists. Copies the location and everything under it plus all logins, same ids and every column; pauses app triggers on the public tables and turns them back on before commit; replaces the profile and role rows the `auth.users` triggers create with the exported ones; adds the operator as admin; sets `app_settings_id_seq`; checks every row count before committing. |
 | `check <backup> <location-id> <operator-email>` | Row counts and checksums per table against the export, then the payroll engine on the migrated rows against `fixtures/expected_v1.json` (per shift and period totals to the cent) |
 | `wipe <backup> <location-id>` | Removes the migrated location and logins (no-go or redo) |
 
@@ -50,9 +50,11 @@ On `supabase/postgres:17.4.1.020` + snapshot + logo storage + an operator login 
 - Before: `remote-baseline.sh check` (Tip-Tally-Pro, PG17, 17 tables), `remote-baseline.sh verify`, `remote-storage.sh verify` and `remote-seed.sh check` all passed.
 - `remote-seed.sh reset`, then `remote-migrate.sh load`: loaded in one transaction.
 - `remote-migrate.sh check`: every table matches the export (row counts and checksums, incl. the 3 logins and their identities); 210 of 210 shifts and 240 of 240 period totals equal `expected_v1.json`; credit tips $66,220.83, take-home $65,883.01.
-- After: `remote-baseline.sh verify` and `remote-storage.sh verify` match; no app trigger left disabled; 4 logins (3 production + Chad), 1 location (Carson's Table) with its owner and Chad as manager.
+- After: `remote-baseline.sh verify` and `remote-storage.sh verify` match; no app trigger left disabled; 4 logins (3 production + Chad), 1 location (Carson's Table) with its owner and Chad (first as manager, then admin).
 - Left over: one file in the `logos` bucket from Chad's earlier test upload under the removed fixture location's folder. Harmless, nothing points to it.
 - The local rehearsal database and unpacked copies are deleted. The backup file stays in the session's scratch folder until go/no-go (`wipe` needs it), then is deleted.
+
+**Chad's role changed to admin (2026-10-31).** As manager, Chad's logo upload stored the file but the settings change was silently refused: production's RLS lets only a location's owner or admin write `app_settings`, and only the owner write `locations`. The Admin page ignores those update errors and still says "Logo updated" (same code and rules in Lovable). Chad chose option 1: his Carson's Table membership is now `admin` (one row updated; Kevin stays the only owner), and the loader now adds the operator as admin. Extra copies of the logo from the test uploads remain in the `logos` bucket; nothing points to them.
 
 Still to do (acceptance test 2): Chad signs in, re-uploads the logo in Admin, and downloads the payroll CSV for a recent pay period from Lovable and from the new app; the two files must match to the cent. Then go/no-go.
 
