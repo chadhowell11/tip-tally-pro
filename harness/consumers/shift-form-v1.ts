@@ -11,7 +11,7 @@ import {
   splitBartenderShares,
   splitServerShares,
   type SupportRole,
-} from "../../src/lib/calculations.ts";
+} from "../../src/engine/calculations.ts";
 
 const SUPPORT_ROLES: SupportRole[] = ["runner", "busser", "bar_back", "hostess"];
 

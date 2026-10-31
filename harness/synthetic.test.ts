@@ -1,16 +1,18 @@
 // Synthetic edge-case parity. Run: node --experimental-strip-types --test harness/synthetic.test.ts
 // Expected values in fixtures/synthetic_v1.json were produced by the v1 code, not by hand.
-// Phase 2: point `compute` at engine/ computeShift(rules "v1"), same as golden.test.ts.
+// Phase 2: runs the engine, computeShift(rules "v1"), same as golden.test.ts.
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { computeShiftV1 as compute } from "./reference-pipeline-v1.ts";
+import { computeShift } from "../src/engine/index.ts";
 import { SYNTHETIC_CASES } from "./synthetic-cases.ts";
 
 const fx = JSON.parse(
   readFileSync(new URL("../fixtures/synthetic_v1.json", import.meta.url), "utf8"),
 );
 const staffRole = new Map<string, string>(fx.staff.map((s: any) => [s.id, s.role]));
+const compute = (sh: any, s: any, role: Map<string, string>) =>
+  computeShift(sh, s, { staffRole: role }, "v1");
 
 test("synthetic fixture covers every defined case", () => {
   assert.deepStrictEqual(

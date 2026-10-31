@@ -10,7 +10,7 @@ import {
   round2,
   splitBartenderShares,
   splitServerShares,
-} from "../../src/lib/calculations.ts";
+} from "../../src/engine/calculations.ts";
 
 type PersonDay = {
   staff_id: string;

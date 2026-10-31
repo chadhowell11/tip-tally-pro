@@ -23,7 +23,7 @@ const c = (n: string, ds = "golden") => current.consumers[n][ds];
 // The harness/consumers/* files are transcriptions. If a source file changes, its copy may be stale:
 // re-transcribe it (or, in Phase 2, delete the copy once that consumer runs on the engine).
 const PINNED: Record<string, string> = {
-  "../src/lib/calculations.ts": "481e6d903211fecb1749cefca19016fcfedc0e7c5222347b23806eb4ad7443d7",
+  "../src/engine/calculations.ts": "481e6d903211fecb1749cefca19016fcfedc0e7c5222347b23806eb4ad7443d7",
   "../src/routes/_authenticated/reports.tsx":
     "01030a663edfd7a0bbad5842780193638ba5b3618c810b18cd50b2a42188de0e",
   "../src/routes/_authenticated/daily.tsx":

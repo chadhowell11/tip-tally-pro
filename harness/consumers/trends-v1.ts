@@ -12,7 +12,7 @@ import {
   splitBartenderShares,
   splitServerShares,
   type SupportRole,
-} from "../../src/lib/calculations.ts";
+} from "../../src/engine/calculations.ts";
 
 type Bucket = "week" | "month";
 export function weekKey(dateStr: string) {

@@ -11,7 +11,7 @@ import {
   round2,
   splitBartenderShares,
   splitServerShares,
-} from "../../src/lib/calculations.ts";
+} from "../../src/engine/calculations.ts";
 
 type Totals = {
   shifts: number;
