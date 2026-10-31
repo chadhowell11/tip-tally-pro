@@ -454,6 +454,36 @@ function ImportDialog({ onClose, onDone }: { onClose: () => void; onDone: () => 
   );
 }
 
+// The database refuses writes it doesn't allow (row-level security) silently: no error, 0 rows
+// changed. Saves ask for the changed rows back (.select) so a refusal is reported, not "Saved".
+// Who may change what is production's rule: settings = owner or admin, profile = owner.
+const NOT_ALLOWED_SETTINGS = "Not saved: only the location's owner or an admin can change settings.";
+const NOT_ALLOWED_PROFILE = "Not saved: only the location's owner can change the establishment profile.";
+function saveResult(res: { data: unknown[] | null; error: { message: string } | null }, refused: string): string | null {
+  if (res.error) return res.error.message;
+  return res.data && res.data.length > 0 ? null : refused;
+}
+
+/** Uploads a logo and points the location's settings at it. Returns the stored path, or the error to show. */
+async function saveLogo(locationId: string, file: File): Promise<{ path: string } | { error: string }> {
+  const ext = file.name.split(".").pop() || "png";
+  const path = `${locationId}/logo-${Date.now()}.${ext}`;
+  const { error } = await supabase.storage.from("logos").upload(path, file, { upsert: true });
+  if (error) return { error: error.message };
+  // app_settings.logo_url is what the home page and the reports show.
+  const problem = saveResult(
+    await supabase.from("app_settings").update({ logo_url: path }).eq("location_id", locationId).select("id"),
+    NOT_ALLOWED_SETTINGS,
+  );
+  if (problem) {
+    await supabase.storage.from("logos").remove([path]); // best effort: don't leave an unused file
+    return { error: problem };
+  }
+  // locations.logo_url is a copy only the owner may write; an admin's upload still counts.
+  await supabase.from("locations").update({ logo_url: path }).eq("id", locationId);
+  return { path };
+}
+
 function SettingsTab({ canEdit }: { canEdit: boolean }) {
   const [s, setS] = useState<Settings | null>(null);
   const [logoSrc, setLogoSrc] = useState<string | null>(null);
@@ -471,7 +501,7 @@ function SettingsTab({ canEdit }: { canEdit: boolean }) {
     if (!s) return;
     setSaving(true);
     setMsg(null);
-    const { error } = await supabase.from("app_settings").update({
+    const res = await supabase.from("app_settings").update({
       establishment_name: s.establishment_name,
       bar_tip_pct: s.bar_tip_pct,
       runner_busser_tip_pct: s.runner_busser_tip_pct,
@@ -493,20 +523,18 @@ function SettingsTab({ canEdit }: { canEdit: boolean }) {
       sms_include_breakdown: s.sms_include_breakdown,
       pay_period_type: s.pay_period_type,
       pay_period_anchor: s.pay_period_anchor || null,
-    }).eq("location_id", s.location_id);
+    }).eq("location_id", s.location_id).select("id");
     setSaving(false);
-    setMsg(error ? error.message : "Saved");
+    setMsg(saveResult(res, NOT_ALLOWED_SETTINGS) ?? "Saved");
   }
 
 
   async function uploadLogo(file: File) {
     if (!s) return;
-    const ext = file.name.split(".").pop() || "png";
-    const path = `${s.location_id}/logo-${Date.now()}.${ext}`;
-    const { error } = await supabase.storage.from("logos").upload(path, file, { upsert: true });
-    if (error) return setMsg(error.message);
-    await supabase.from("app_settings").update({ logo_url: path }).eq("location_id", s.location_id);
-    await supabase.from("locations").update({ logo_url: path }).eq("id", s.location_id);
+    setMsg(null);
+    const r = await saveLogo(s.location_id, file);
+    if ("error" in r) return setMsg(r.error);
+    const path = r.path;
     setS({ ...s, logo_url: path });
     setLogoSrc(await resolveLogoUrl(path));
     setMsg("Logo updated");
@@ -796,21 +824,17 @@ function TeamTab() {
     setInvites((inv ?? []) as InviteRow[]);
     setMembers((mem ?? []) as MemberRow[]);
     setStaffCount(count ?? 0);
-    const logoPath = (l as { logo_url?: string | null } | null)?.logo_url ?? settings?.logo_url ?? null;
+    // Same source as the home page and reports: the settings' logo first, the location's copy as fallback.
+    const logoPath = settings?.logo_url ?? (l as { logo_url?: string | null } | null)?.logo_url ?? null;
     setLogoSrc(await resolveLogoUrl(logoPath));
   }
 
   async function uploadLogo(file: File) {
     if (!locationId) return;
     setMsg(null);
-    const ext = file.name.split(".").pop() || "png";
-    const path = `${locationId}/logo-${Date.now()}.${ext}`;
-    const { error } = await supabase.storage.from("logos").upload(path, file, { upsert: true });
-    if (error) return setMsg(error.message);
-    await Promise.all([
-      supabase.from("app_settings").update({ logo_url: path }).eq("location_id", locationId),
-      supabase.from("locations").update({ logo_url: path }).eq("id", locationId),
-    ]);
+    const r = await saveLogo(locationId, file);
+    if ("error" in r) return setMsg(r.error);
+    const path = r.path;
     setLoc((prev) => prev ? { ...prev, logo_url: path, setup_steps: { ...prev.setup_steps, logo: true } } : prev);
     setLogoSrc(await resolveLogoUrl(path));
     setMsg("Logo updated");
@@ -837,10 +861,10 @@ function TeamTab() {
 
   async function saveProfile() {
     if (!locationId || !loc) return;
-    const { error } = await supabase.from("locations").update({
+    const res = await supabase.from("locations").update({
       name: loc.name, establishment_type: loc.establishment_type, address: loc.address, timezone: loc.timezone,
-    }).eq("id", locationId);
-    setMsg(error ? error.message : "Establishment profile saved");
+    }).eq("id", locationId).select("id");
+    setMsg(saveResult(res, NOT_ALLOWED_PROFILE) ?? "Establishment profile saved");
   }
 
   if (!loc) return <p className="text-muted-foreground">Loading…</p>;
