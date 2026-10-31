@@ -1,6 +1,6 @@
 # New environment: Supabase + Render
 
-**Status (2026-10-31, later):** Baseline applied to the new project and verified. Next: Chad adds a test login, then the fixture seed and math check (step 3 under "Handoff"). Scope and rules are in `CLAUDE.md` ("New environment rules").
+**Status (2026-10-31, later):** Baseline applied and verified; fixtures seeded and the payroll math on them checked. Next: merge PR #1 and this PR, then deploy on Render and smoke-test (step 4 under "Handoff"). Scope and rules are in `CLAUDE.md` ("New environment rules").
 
 ## Hosted project baseline (done 2026-10-31)
 
@@ -9,6 +9,13 @@
 - `apply`: `docs/handoff/schema.sql` applied in one transaction; 17 tables in `public`, including `tip_override_audit`.
 - `verify`: "catalog matches the production snapshot". No differences, including grants.
 - After apply: 0 users in `auth.users`, 0 locations.
+
+## Hosted fixture seed (done 2026-10-31)
+
+- Owner login: the one user Chad created (confirmed, app admin via `handle_new_user_admin`).
+- `remote-seed.sh seed`: 1 location (owner membership), 24 staff, 210 shifts (2026-06-30 to 2026-10-30), 370 server entries, 202 bartender entries, 146 support rows. Audit tables: 0 rows.
+- `remote-seed.sh check`: 210 of 210 shifts equal `expected_v1.json`; 240 of 240 period-total values match to the cent; credit tips $66,220.83, take-home $65,883.01.
+- Fix found on the first run: the seed SQL was too large for a curl argument, so `mgmt-api.sh` now sends the request body from a file. Nothing was written by the failed attempt.
 
 ## Local migration test
 
@@ -123,6 +130,6 @@ Deploy only after the baseline is applied. Until Google sign-in is rewired, use 
 0. ~~Chad confirms the project ref.~~ Done.
 1. ~~`harness/db/remote-baseline.sh check`: confirm the ref, PG17, and 0 tables in `public`. Stop and report if any of that is wrong.~~ Done.
 2. ~~`harness/db/remote-baseline.sh apply`, then `verify`. Report any catalog diff before going further.~~ Done, no diff.
-3. Chad adds a test login (Authentication → Users → Add user). Then `harness/db/remote-seed.sh seed <that email>` and `harness/db/remote-seed.sh check`. *(Script written and tested locally.)*
+3. ~~Chad adds a test login (Authentication → Users → Add user). Then `harness/db/remote-seed.sh seed <that email>` and `harness/db/remote-seed.sh check`.~~ Done, all match.
 4. Tell Chad to deploy on Render, then smoke-test sign-in and the payroll screen.
 5. Then replace the Lovable-only pieces, one PR each: Google sign-in (Supabase OAuth), Twilio direct, error reporting.

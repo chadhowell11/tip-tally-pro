@@ -36,9 +36,11 @@ query() {
     rm -f "$f"; [[ $rc == 0 ]] || exit "$rc"; printf '[]'; return 0
   fi
   local body out code
-  body="$(jq -Rs '{query: .}' <<<"$1")"
-  out="$(mktemp)"
-  code="$(curl -sS -o "$out" -w '%{http_code}' -X POST "$API/database/query" -H 'Content-Type: application/json' --data-binary "$body")"
+  # Body goes through a file: the seed SQL is too large for a command-line argument.
+  body="$(mktemp)"; out="$(mktemp)"
+  printf '%s' "$1" | jq -Rs '{query: .}' > "$body"
+  code="$(curl -sS -o "$out" -w '%{http_code}' -X POST "$API/database/query" -H 'Content-Type: application/json' --data-binary "@$body")"
+  rm -f "$body"
   if [[ "$code" != 2* ]]; then echo "query failed: HTTP $code: $(head -c 500 "$out")" >&2; rm -f "$out"; exit 1; fi
   cat "$out"; rm -f "$out"
 }
