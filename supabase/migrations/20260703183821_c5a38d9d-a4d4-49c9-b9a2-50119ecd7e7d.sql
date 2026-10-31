@@ -1,0 +1,1 @@
+ALTER TABLE public.app_settings ADD COLUMN IF NOT EXISTS bartender_tip_pct numeric NOT NULL DEFAULT 0.10;

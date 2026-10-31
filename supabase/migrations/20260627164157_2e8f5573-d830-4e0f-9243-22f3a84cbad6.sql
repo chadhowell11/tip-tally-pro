@@ -1,0 +1,1 @@
+ALTER TABLE public.app_settings ADD COLUMN IF NOT EXISTS max_tipout_pct NUMERIC(5,4) NOT NULL DEFAULT 0.30;

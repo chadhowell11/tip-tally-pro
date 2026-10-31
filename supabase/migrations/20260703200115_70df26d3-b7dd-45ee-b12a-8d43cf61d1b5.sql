@@ -1,0 +1,1 @@
+ALTER TABLE public.app_settings ADD COLUMN IF NOT EXISTS rounding_mode text NOT NULL DEFAULT 'nearest' CHECK (rounding_mode IN ('nearest','up','down'));

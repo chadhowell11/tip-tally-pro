@@ -1,0 +1,2 @@
+ALTER TABLE public.shifts ADD COLUMN IF NOT EXISTS support_split_mode text NOT NULL DEFAULT 'weighted';
+ALTER TABLE public.shifts ADD CONSTRAINT shifts_support_split_mode_check CHECK (support_split_mode IN ('shared','weighted'));

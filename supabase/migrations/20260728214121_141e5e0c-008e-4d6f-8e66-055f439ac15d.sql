@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX IF NOT EXISTS shifts_unique_date_period_location ON public.shifts (location_id, shift_date, period);

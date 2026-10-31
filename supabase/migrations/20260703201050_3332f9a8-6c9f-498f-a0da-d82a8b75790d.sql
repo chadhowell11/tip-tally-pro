@@ -1,0 +1,2 @@
+ALTER TABLE public.app_settings DROP CONSTRAINT IF EXISTS app_settings_rounding_mode_check;
+ALTER TABLE public.app_settings ADD CONSTRAINT app_settings_rounding_mode_check CHECK (rounding_mode IN ('none','nearest','up','down'));

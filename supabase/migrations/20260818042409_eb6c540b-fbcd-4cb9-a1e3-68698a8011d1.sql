@@ -1,0 +1,1 @@
+ALTER TABLE public.shift_support ADD COLUMN IF NOT EXISTS role staff_role;

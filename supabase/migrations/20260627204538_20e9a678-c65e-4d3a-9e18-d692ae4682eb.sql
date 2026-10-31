@@ -1,0 +1,1 @@
+UPDATE public.app_settings SET location_id = '86f88398-c708-4bb4-bd73-75de34171e42' WHERE id = 1 AND location_id IS NULL;

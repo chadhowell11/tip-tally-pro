@@ -1,0 +1,1 @@
+ALTER TABLE public.shift_bartenders ADD COLUMN IF NOT EXISTS cash_owed numeric NOT NULL DEFAULT 0;
