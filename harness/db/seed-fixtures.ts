@@ -119,8 +119,8 @@ commit;
 }
 
 /** One json value, shaped like the payroll screen's selects (reports.tsx), rows in insertion order. */
-export function readbackSql(): string {
-  const L = lit(LOCATION_ID);
+export function readbackSql(locationId: string = LOCATION_ID): string {
+  const L = lit(locationId);
   return `select json_build_object(
   'counts', json_build_object(
     'locations', (select count(*) from public.locations),
@@ -156,11 +156,15 @@ export function readbackSql(): string {
 ) as j`;
 }
 
-/** Runs the payroll engine on rows read back from the database and compares with expected_v1.json. */
-export function check(db: any): string[] {
+/** Runs the payroll engine on rows read back from the database and compares with expected_v1.json.
+ *  Staff ids map to S01..S24 either by the seed's derived ids (default) or, for the migrated
+ *  production data, by sorting the location's staff ids: that is how the fixtures were numbered. */
+export function check(db: any, mapping: "seed" | "by-sorted-staff-id" = "seed"): string[] {
   const expected = read("../../fixtures/expected_v1.json");
   const problems: string[] = [];
-  const toFixture = new Map<string, string>(inputs.staff.map((p: any) => [staffUuid(p.id)!, p.id]));
+  const toFixture = mapping === "seed"
+    ? new Map<string, string>(inputs.staff.map((p: any) => [staffUuid(p.id)!, p.id]))
+    : new Map<string, string>([...db.staff.map((s: any) => s.id)].sort().map((u: string, i: number) => [u, inputs.staff[i]?.id ?? `extra-${i}`]));
   const unmap = (x: unknown) =>
     JSON.parse(JSON.stringify(x).replace(/"([0-9a-f-]{36})"/g, (m, u) => (toFixture.has(u) ? `"${toFixture.get(u)}"` : m)));
 
@@ -204,15 +208,15 @@ export function check(db: any): string[] {
   return problems;
 }
 
-const [cmd, arg] = process.argv.slice(2);
+const [cmd, arg, arg2] = process.argv.slice(2);
 if (import.meta.url === `file://${process.argv[1]}`) {
   if (cmd === "seed-sql") {
     if (!arg || !/^[^@\s']+@[^@\s']+$/.test(arg)) throw new Error("usage: seed-sql <owner-email>");
     process.stdout.write(seedSql(arg));
   } else if (cmd === "reset-sql") process.stdout.write(resetSql());
-  else if (cmd === "readback-sql") process.stdout.write(readbackSql());
+  else if (cmd === "readback-sql") process.stdout.write(readbackSql(arg));
   else if (cmd === "check") {
-    const problems = check(JSON.parse(readFileSync(arg, "utf8")));
+    const problems = check(JSON.parse(readFileSync(arg, "utf8")), (arg2 as "by-sorted-staff-id") || "seed");
     if (problems.length) {
       console.error(`MISMATCH (${problems.length}):\n  ${problems.slice(0, 40).join("\n  ")}`);
       process.exit(1);

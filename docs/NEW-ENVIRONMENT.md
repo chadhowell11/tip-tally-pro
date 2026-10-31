@@ -1,6 +1,6 @@
 # New environment: Supabase + Render
 
-**Status (2026-10-31, evening):** Baseline applied and verified; fixtures seeded and checked; app live on Render (`https://tip-tally-pro.onrender.com`) with the smoke test passed; logo storage applied and verified. Chad revoked the access token and confirmed an uploaded logo shows on the payroll report and its print view. Next: the data migration waits for Chad's answers and written approval (`docs/DATA-MIGRATION-PLAN.md`). Scope and rules are in `CLAUDE.md` ("New environment rules").
+**Status (2026-10-31, night):** Environment ready (baseline, logo storage, Render). Data migration approved by Chad; loader `harness/db/remote-migrate.sh` rehearsed locally with the production backup, all checks pass. Next: the hosted load (`docs/DATA-MIGRATION-PLAN.md`, "Hosted steps"). Scope and rules are in `CLAUDE.md` ("New environment rules").
 
 ## Hosted project baseline (done 2026-10-31)
 
@@ -167,5 +167,5 @@ Deploy only after the baseline is applied. Google sign-in works once the setup i
 3. ~~Chad adds a test login (Authentication → Users → Add user). Then `harness/db/remote-seed.sh seed <that email>` and `harness/db/remote-seed.sh check`.~~ Done, all match.
 4. ~~Tell Chad to deploy on Render, then smoke-test sign-in and the payroll screen.~~ Done, smoke test passed.
 5. ~~Logo storage: `harness/db/remote-storage.sh apply`, then `verify`.~~ Done, matches production. Chad revoked the access token and confirmed the logo on the payroll report and print.
-6. Production data migration: `docs/DATA-MIGRATION-PLAN.md` (draft, waiting for Chad's approval).
+6. Production data migration: approved; loader rehearsed locally. Next: "Hosted steps" in `docs/DATA-MIGRATION-PLAN.md`. The backup file must be in the session (upload it again in a new session).
 7. Then replace the Lovable-only pieces, one PR each: ~~Google sign-in (Supabase OAuth)~~ (done in code; setup in "Google sign-in"), Twilio direct, error reporting.
