@@ -1,4 +1,5 @@
-// CHARACTERIZATION COPY of the payroll report math in src/routes/_authenticated/reports.tsx
+// PRE-ENGINE CHARACTERIZATION COPY of the payroll report math as it was in src/routes/_authenticated/reports.tsx
+// before Phase 2 (reports.tsx now calls src/engine; harness/engine.test.ts proves the two are bit-identical).
 // (totalsByStaff 208–276, dayRowsByStaff 278–342, rows 344–349, grand 358–373, totalTips/takePct 66–73).
 // React hooks removed; logic transcribed line for line. Never fix anything here — it records today's behavior.
 // characterize.test.ts pins reports.tsx by sha256 so this copy cannot silently drift.

@@ -25,7 +25,7 @@ const c = (n: string, ds = "golden") => current.consumers[n][ds];
 const PINNED: Record<string, string> = {
   "../src/engine/calculations.ts": "481e6d903211fecb1749cefca19016fcfedc0e7c5222347b23806eb4ad7443d7",
   "../src/routes/_authenticated/reports.tsx":
-    "01030a663edfd7a0bbad5842780193638ba5b3618c810b18cd50b2a42188de0e",
+    "e027dcaf9465904a85f061a91d11812c474d86b34ae34cf5c9bccf38caf88dab",
   "../src/routes/_authenticated/daily.tsx":
     "c768f6609185686bd34b4a245ab1c3df84ce24211e53e4bf1b165c23c2692539",
   "../src/routes/_authenticated/individual.tsx":
