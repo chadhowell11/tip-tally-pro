@@ -12,7 +12,10 @@
     "format": "prettier --write .",
     "test": "node --experimental-strip-types --test harness/golden.test.ts",
     "test:synthetic": "node --experimental-strip-types --test harness/synthetic.test.ts",
-    "gen:synthetic": "node --experimental-strip-types harness/gen-synthetic.ts"
+    "gen:synthetic": "node --experimental-strip-types harness/gen-synthetic.ts",
+    "test:characterize": "node --experimental-strip-types --import ./harness/register-alias.mjs --test harness/characterize.test.ts",
+    "gen:characterization": "node --experimental-strip-types --import ./harness/register-alias.mjs harness/gen-characterization.ts",
+    "test:all": "npm test && npm run test:synthetic && npm run test:characterize"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
